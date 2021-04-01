@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="style2.css">
 </head>
 <body>
-    <div class="div">
+    <div id="header-nav">
         <header>
             <h1>Αρχική Σελίδα</h1>
         </header> 
@@ -44,23 +44,23 @@
             <fieldset>
                 <legend>Πληκτρολογήστε παρακάτω τα στοιχεία σας</legend>
                 <div>
-                    <label for="name">Όνομα:</label>
-                    <input type="text" id="name" name="name" placeholder="Κωνσταντίνος" required>
+                    <label for="name" class="form">Όνομα:</label>
+                    <input type="text" id="name" name="name" placeholder="Κωνσταντίνος" required  class="form">
                 </div>
                 <div>
                     <label for="sur">Επίθετο:</label>
-                    <input type="text" id="sur" name="surname" placeholder="Παπαδόπουλος" required>
+                    <input type="text" id="sur" name="surname" placeholder="Παπαδόπουλος" required class="form">
                 </div>
                 <div>
                     <label for="mail">Email:</label>
-                    <input type="email" id="mail" name="email" placeholder="name@email.com" required>
+                    <input type="email" id="mail" name="email" placeholder="name@email.com" required class="form">
                 </div>
                 <div>
-                    <textarea rows="8" cols="50" name="comments" id="com">Σχόλια...
+                    <textarea rows="8" cols="50" name="comments" id="com" class="form">Σχόλια...
                     </textarea>
                 </div>
                 <div>
-                    <fieldset>
+                    <fieldset  class="form">
                         <legend>Φύλο</legend>
                         <div>
                             <label for="man">Άντρας</label>
@@ -84,10 +84,9 @@
     </section>
     </main>
     <footer>
-        <hr>
         <h4>Find me on social media</h4>
-        <a href="https://www.facebook.com" target="_blank"><img src="pictures/facebook.jpg" alt="My Facebook account" width="50" height="50"></a>
-        <a href="https://www.instagram.com" target="_blank"><img src="pictures/instagram.jpg" alt="My Instagram account" width="50" height="50"></a>
+        <a href="https://www.facebook.com" target="_blank"><img src="pictures/facebook.png" alt="My Facebook account" width="50" height="50"></a>
+        <a href="https://www.instagram.com" target="_blank"><img src="pictures/instagram.png" alt="My Instagram account" width="50" height="50"></a>
         <a href="https://www.twitter.com" target="_blank"><img src="pictures/twitter.png" alt="My Twitter account" width="50" height="50"></a>
     </footer>
 </body>
