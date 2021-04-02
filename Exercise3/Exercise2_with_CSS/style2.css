@@ -33,11 +33,11 @@ header{
     padding-bottom: 5px;
     padding-top: 5px;
     text-align: center;
-    border-bottom: 5px ridge rgb(255, 4, 80);
 }
 
 #header-nav{
     background-color: coral;
+    color:white;
 }
 
 nav ul{
@@ -53,25 +53,34 @@ nav{
     font-size: 1.5em;
     background-color: coral;
     padding-bottom: 10px;  
+    border-bottom:solid 3px black;
+    border-top:solid 3px black;
 }
 
 .spans{  
     padding-right: 35px;
     padding-left: 35px;
-    display:inline-block;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    display:inline-block;    
+}
+
+#span1,#span2
+{
+    border-right:solid 3px black;
 }
 
 .spans:hover{
-        color:white;
+    color:black;
 }
 
 .spans:active{
     background-color:red;
-    color:black;
+    color:white;
 }
 
 nav ul li a{
-    color:black;
+    color:white;
     text-decoration:none; 
 }
 
@@ -121,6 +130,7 @@ footer{
     background-color:coral;
     padding-top: 20px;
     padding-bottom: 60px;
+    border-top:solid;
 }
 
 img:not(.image){
