@@ -1,6 +1,27 @@
 body{
     font-family: Arial,sans-serif;
     margin: 0px;
+    background-color: #ffffe6;
+}
+
+p{
+    font-size: 16px;
+}
+
+h1{
+    font-size: 2em; 
+}
+
+h2{
+    font-size: 1.6em; 
+}
+
+h3{
+    font-size: 1.25em; 
+}
+
+h4{
+    font-size: 1.1em; 
 }
 
 main{
