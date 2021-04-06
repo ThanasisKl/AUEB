@@ -1,0 +1,13 @@
+body{
+    margin:0px;
+}
+
+header{
+    background-color: yellow;
+}
+
+div{
+    background-color: rgba(143, 154, 245, 0.288);
+    /*display: inline-block;*/
+    position: sticky;
+}

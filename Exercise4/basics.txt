@@ -1,0 +1,84 @@
+** Βασικοί Τύποι Δεδομένων της Python
+
+Ακέραιες τιμές (int)
+6
+-5495
+
+Τιμές κινητής υποδιαστολής (float)
+54.444
+2.43e-38
+6.0
+
+Αλφαριθμητικές τιμές (str)
+'menu'
+"menu"
+Χρήσιμες στην αναπαράσταση κειμένου και λέξεων
+
+Λογικές τιμές (bool)
+True
+False
+Χρήσιμες στον έλεγχο συνθηκών, πχ, «η θερμοκρασία 
+είναι ≥ 10&deg;C»
+
+** Βασικοί Τελεστές της Python
+έκφραση τιμή
+8+14 22
+8-14.0 -6.0
+6*7 42
+7/2 3.5
+7//2 3
+7 % 4 3
+-43.5 -43.5
+2**3 27
+2+3/3*4 6.0
+2+3/(3*4) 2.25
+
+** Βασικές Συναρτήσεις της Python
+>>> abs(-3.6)
+3.6
+>>> max(3, 5)
+5
+>>> pow(2,3)
+8
+>>> sqrt(4)
+2
+>>>min(1,7)
+1
+
+** Ανάθεση στην Python
+>>> rose_name = ’rose’
+>>> foo = rose_name
+>>> foo
+’rose’
+>>> rose_name = ’lilly’
+>>> foo
+’rose’
+
+** Hello World Program in Python
+>>> print(’Hello world!’)
+Hello world!
+
+** Η συνάρτηση input
+>>> name = input(’What is your name? ’)
+What is your name? Albert
+(Το διαλογικό περιβάλλον 
+περιμένει την είσοδο του 
+χρήστη)
+
+** Δημιουργία Συναρτήσεων στην Python
+>>> def square(x):
+	return x*x
+
+** if Python
+def absolute_value(x):
+	if x >= 0:
+		return x
+	else:
+		return -x
+
+** While Python
+def print6(x):
+	i = 1
+	while i < 6:
+		print(i)
+		i += 1

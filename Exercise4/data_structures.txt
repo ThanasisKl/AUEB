@@ -1,0 +1,133 @@
+**Array
+An array is a special variable, 
+which can hold more than one value at a time.
+
+Array Initialization
+numbers = [1,2,3,4]
+>>> numbers
+[1, 2, 3, 4]
+
+>>> numbers[0] = 9
+>>> numbers
+[9, 2, 3, 4]
+
+>>> for x in numbers:
+	print(x)
+
+	
+9
+2
+3
+4
+
+>>> numbers.append(5)
+>>> numbers
+[9, 2, 3, 4, 5]
+
+>>> numbers.pop(0)
+9
+>>> numbers
+[2, 3, 4, 5]
+
+>>> numbers.remove(5)
+>>> numbers
+[2, 3, 4]
+
+Method		Description
+append()	Adds an element at the end of the list
+clear()		Removes all the elements from the list
+copy()		Returns a copy of the list
+count()		Returns the number of elements with the specified value
+extend()	Add the elements of a list (or any iterable), to the end of the current list
+index()		Returns the index of the first element with the specified value
+insert()	Adds an element at the specified position
+pop()		Removes the element at the specified position
+remove()	Removes the first item with the specified value
+reverse()	Reverses the order of the list
+sort()		Sorts the list
+
+**Set
+Sets are created using the flower braces but instead of adding key-value pairs, you just pass 
+values to it.
+
+>>> set = {1,2,3,4,5,5,5}
+>>> set
+{1, 2, 3, 4, 5}
+
+>>> for x in set:
+	print(x)
+
+	
+1
+2
+3
+4
+5
+
+>>> set.add(6)
+>>> set
+{1, 2, 3, 4, 5, 6}
+
+>>> set.remove(6)
+>>> set
+{1, 2, 3, 4, 5}
+
+>>> set ={1,2}
+>>> set2 = {2,3,4} 
+>>> set3 = set.union(set2)
+>>> set3
+{1, 2, 3, 4}
+
+>>> set ={1,2}
+>>> set2 = {2,3,4}
+>>> set3 = set.intersection(set2)
+>>> set3
+{2}
+
+**Dictionary
+Dictionaries are used to store data values in key:value pairs.
+
+A dictionary is a collection which is ordered*, changeable and
+does not allow duplicates.
+
+As of Python version 3.7, dictionaries are ordered. In Python 3.6 
+and earlier, dictionaries are unordered.
+
+>>> dict = {1:"Mary",2:"Paul",3:"Tyler"}
+>>> x = dict.get(1)
+>>> x
+'Mary'
+>>> x = thisdict.keys()
+Traceback (most recent call last):
+  File "<pyshell#102>", line 1, in <module>
+    x = thisdict.keys()
+NameError: name 'thisdict' is not defined
+>>> x = dict.keys()
+>>> x
+dict_keys([1, 2, 3])
+>>> dict[4] = "Josh"
+>>> dict
+{1: 'Mary', 2: 'Paul', 3: 'Tyler', 4: 'Josh'}
+
+>>> if 1 in dict:
+	print("Yes, 1 is one of the keys in the dict dictionary")
+
+	
+Yes, 1 is one of the keys in the dict dictionary
+
+>>> dict.update({2:"George"})
+>>> dict
+{1: 'Mary', 2: 'George', 3: 'Tyler', 4: 'Josh'}
+
+>>> del dict[4]
+>>> dict
+{1: 'Mary', 2: 'George', 3: 'Tyler'}
+>>> for x in dict:
+	print(dict[x])
+
+	
+Mary
+George
+Tyler
+>>> for x in dict:
+	print(x + ": " +dict[x])
