@@ -65,7 +65,6 @@ aside{
 .menu a{
     text-decoration: none;
     color:black;
-    /*background-color: red;*/
 }
 
 nav ul{
@@ -81,7 +80,6 @@ nav ul{
 .menu li a {
     display: block;
     padding: 15px 9px;
-    /*background-color: red;*/
     margin-bottom: 20px;
     font-weight: 700;
     font-size: 1.2em ;
