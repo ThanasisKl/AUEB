@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style4.css">
+    <title>Python Basics</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="pictures/python-icon.png" alt="Python icon" width="70" height="70" id="python-icon"></a>
+            <h1>Python Basics</h1>
+        </header>
+        <nav> 
+            <ul class="menu">
+                <li><a href="index.html">Home Page</a></li>
+                <li><a href="data_structures.html">Data Structures</a></li>
+                <li><a href="history.html">History of Python</a></li>
+            </ul>
+        </nav>
+        <main>
+            <h2>Βασικές Δομές Δεδομένων της Python</h2>
+            <h3 class="data_strc">List</h3>
+            <p>Η Λίστα χρησιμοποιείται για την αποθήκευση πολλών αντικειμένων σε μία μεταβλητή. Η λίστα επιρέπει τα διπλώτυπα και το μέγεθος της μπορεί να αυξομειώνεται. </p>
+            <h3>List Initialization</h3>
+            <pre>
+<span class="orange">>>></span><span class="purple"> numbers = [1,2,3,4]</span>
+<span class="orange">>>></span><span class="purple"> numbers</span>
+<span class="blue">[1, 2, 3, 4]</span>
+            </pre>
+    
+            <h3>Αλλαγή αντικειμένου σε συγκεκριμένο index</h3>
+            <pre>
+<span class="orange">>>></span><span class="purple"> numbers[0] = 9</span>
+<span class="orange">>>></span><span class="purple"> numbers</span>
+<span class="blue">[9, 2, 3, 4]</span></pre>
+            <h3>List iteration</h3>
+            <pre>
+<span class="orange">>>></span><span class="purple"> for x in numbers:
+        print(x)</span>
+    
+        
+<span class="blue">9
+2
+3
+4</span>
+            </pre>
+            <h3>Προσθήκη αντικειμένου στην λίστα</h3>
+            <pre>
+<span class="orange">>>></span><span class="purple"> numbers.append(5)</span>
+<span class="orange">>>></span><span class="purple"> numbers</span>
+<span class="blue">[9, 2, 3, 4, 5]</span>
+            </pre>
+            <h3>Διαγραφή αντικειμένου στην λίστα προσδιορίζοντας το index</h3>
+            <pre>
+<span class="orange">>>></span><span class="purple"> numbers.pop(0)</span>
+<span class="blue">9</span>
+<span class="orange">>>></span><span class="purple"> numbers</span>
+<span class="blue">[2, 3, 4, 5]</span>
+            </pre>
+            <h3>Διαγραφή αντικειμένου στην λίστα προσδιορίζοντας την τιμή του στοιχείου</h3>
+            <pre>
+<span class="orange">>>></span><span class="purple"> numbers.remove(5)</span>
+<span class="orange">>>></span><span class="purple"> numbers</span>
+<span class="blue">[2, 3, 4]</span>
+            </pre>
+            <table>
+                <tr>
+                    <th>Method</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>append()</td>
+                    <td>Adds an element at the end of the list</td>
+                </tr>
+                <tr>
+                    <td>clear()</td>
+                    <td>Removes all the elements from the list</td>
+                </tr>
+                <tr>
+                    <td>copy()</td>
+                    <td>Returns a copy of the list</td>
+                </tr>
+                <tr>
+                    <td>count()</td>
+                    <td>Returns the number of elements with the specified value</td>
+                </tr>
+                <tr>
+                    <td>extend()</td>
+                    <td>Add the elements of a list (or any iterable), to the end of the current list</td>
+                </tr>
+                <tr>
+                    <td>index()</td>
+                    <td>Returns the index of the first element with the specified value</td>
+                </tr>
+                <tr>
+                    <td>insert()</td>
+                    <td>Adds an element at the specified position</td>
+                </tr>
+                <tr>
+                    <td>pop()</td>
+                    <td>Removes the element at the specified position</td>
+                </tr>
+                <tr>
+                    <td>remove()</td>
+                    <td>Removes the first item with the specified value</td>
+                </tr>
+                <tr>
+                    <td>reverse()</td>
+                    <td>Reverses the order of the list</td>
+                </tr>
+                <tr>
+                    <td>pop()</td>
+                    <td>Sorts the list</td>
+                </tr>
+            </table>
+            <h3 class="data_strc">Set</h3>
+            <p>Το σύνολο είναι παρόμοια δομή δεδομένων με την λίστα αλλά με την διαφορά ότι στο σύνολο δεν επιτρέπονται τα διπλότυπα </p>
+
+            <h3>Set Initialization</h3>
+            <pre>
+<span class="orange">>>></span><span class="purple"> set = {1,2,3,4,5,5,5}</span>
+<span class="orange">>>></span><span class="purple"> set</span>
+<span class="blue">{1, 2, 3, 4, 5}</span>
+<span class="orange">>>></span><span class="green"> #(Βλέπουμε ότι δεν υπάρχουν διπλότυπα)</span>
+            </pre>
+            <h3>Set iteration</h3>
+            <pre>
+<span class="orange">>>></span><span class="purple"> for x in set:
+        print(x)</span>
+
+	
+<span class="blue">1
+2
+3
+4
+5</span>
+            </pre>
+            <h3>Προσθήκη αντικειμένου στo σύνολο</h3>
+            <pre>
+<span class="orange">>>></span><span class="purple"> set.add(6)</span>
+<span class="orange">>>></span><span class="purple"> set</span>
+<span class="blue">{1, 2, 3, 4, 5, 6}</span>
+            </pre>
+
+            <h3>Διαγραφή αντικειμένου άπό το σύνολο</h3>
+            <pre>
+<span class="orange">>>></span><span class="purple"> set.remove(6)</span>
+<span class="orange">>>></span><span class="purple"> set</span>
+<span class="blue">{1, 2, 3, 4, 5}</span>
+            </pre>
+
+            <h3>Union</h3>
+            <pre>
+<span class="orange">>>></span><span class="purple"> set ={1,2}</span>
+<span class="orange">>>></span><span class="purple"> set2 = {2,3,4}</span> 
+<span class="orange">>>></span><span class="purple"> set3 = set.union(set2)</span>
+<span class="orange">>>></span><span class="purple"> set3</span>
+<span class="blue">{1, 2, 3, 4}</span>
+            </pre>
+
+            <h3>Intersection</h3>
+            <pre>
+<span class="orange">>>></span><span class="purple"> set ={1,2}</span>
+<span class="orange">>>></span><span class="purple"> set2 = {2,3,4}</span>
+<span class="orange">>>></span><span class="purple"> set3 = set.intersection(set2)</span>
+<span class="orange">>>></span><span class="purple"> set3</span>
+<span class="blue">{2}</span>
+            </pre>
+
+            <h3 class="data_strc">Dictionary</h3>
+            <p>Τα λεξικά χρησιμοποιούνται για να αποθηκεύσουν δεδομένα της μορφής κλειδι:τιμή και δεν επιτρέπουν δεδομένα με διπλότυπα κλειδιά.</p>
+            <h3>Dictionary Initialization</h3>
+            <pre>
+<span class="orange">>>></span><span class="purple"> dict = {1:"Mary",2:"Paul",3:"Tyler"}</span>
+<span class="orange">>>></span><span class="purple"> dict</span>
+<span class="blue">{1: 'Mary', 2: 'Paul', 3: 'Tyler'}</span>
+            </pre>
+            <h3>Εύρεση τιμής για συγκεκριμένο κλειδί</h3>
+            <pre>
+<span class="orange">>>></span><span class="purple"> x = dict.get(1)</span>
+<span class="orange">>>></span><span class="purple"> x</span>
+<span class="blue">'Mary'</span>
+            </pre>
+
+            <h3>Εύρεση όλων των κλειδιών του λεξικού</h3>
+            <pre>
+<span class="orange">>>></span><span class="purple"> x = dict.keys()</span>
+<span class="orange">>>></span><span class="purple"> x</span>
+<span class="blue">dict_keys([1, 2, 3])</span>
+            </pre>
+
+            <h3>Προσθήκη στοιχείου στο λεξικό</h3>
+            <pre>
+<span class="orange">>>></span><span class="purple"> dict[4] = "Josh"</span>
+<span class="orange">>>></span><span class="purple"> dict</span>
+<span class="blue">{1: 'Mary', 2: 'Paul', 3: 'Tyler', 4: 'Josh'}</span>
+            </pre>
+
+            <h3>Έλεγχος ύπαρξης κλειδιού στο λεξικό</h3>
+            <pre>
+<span class="orange">>>></span><span class="purple"> if 1 in dict:
+	print("Yes, 1 is one of the keys in the dict dictionary")</span>
+       	
+<span class="blue">Yes, 1 is one of the keys in the dict dictionary</span>
+            </pre>
+
+            <h3>Επεξεργασία λεξικού</h3>
+            <pre>
+<span class="orange">>>></span><span class="purple"> dict.update({2:"George"})</span>
+<span class="orange">>>></span><span class="purple"> dict</span>
+<span class="blue">{1: 'Mary', 2: 'George', 3: 'Tyler', 4: 'Josh'}</span>
+            </pre>
+
+            <h3>Διαγραφή στοιχείου με συγκεκριμένο κλειδί</h3>
+            <pre>
+<span class="orange">>>></span><span class="purple"> del dict[4]</span>
+<span class="orange">>>></span><span class="purple"> dict</span>
+<span class="blue">{1: 'Mary', 2: 'George', 3: 'Tyler'}</span>
+            </pre>
+
+            <h3>Dictionary Iteration</h3>
+            <pre>
+<span class="orange">>>></span><span class="purple"> for x in dict:
+	print(dict[x])</span>
+
+<span class="blue">Mary
+George
+Tyler</span>
+        </pre>
+           
+        </main>
+        <aside>
+            <figure>
+                <img src="pictures/data.png" alt="Python Data Structures" width="300" height="150" id="creator">
+                <figcaption>Data Structures in Python</figcaption>
+            </figure>
+        </aside>
+        <footer>
+            <p>Copyright &#169; 2021 Python Basics - All rights reserved</p>
+        </footer>
+    </div>
+</body>
+</html>
