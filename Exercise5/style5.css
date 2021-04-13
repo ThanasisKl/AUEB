@@ -162,7 +162,7 @@ figcaption {
     text-align: center;
 }
 
-@media (max-width:450px){
+@media only screen and (max-width:450px){
     h1{
         color:white;
     }
@@ -193,7 +193,11 @@ figcaption {
     }
 }
 
-@media (min-width:450px) and (max-width:1040){
+@media only screen and (min-width:451px) and (max-width:1040px){
+    h1{
+        color:rgb(88, 24, 24);
+    }
+
     header{
         grid-column: 1 / 3;
         grid-row: 1/ 2;
@@ -217,28 +221,26 @@ figcaption {
     aside{
         grid-column: 2 / 3;
         grid-row: 3/ 4;
-        background-color:lightblue;
-        border-top: 4px solid;
-        border-bottom: 4px solid;
-        border-color: white;
-        
     }
 
     .container{
-        grid-template-columns: 0.2 1fr;
+        grid-template-columns: 0.2fr 1fr;
         grid-template-rows: 0.05fr 2fr 0.1fr 0.05fr ;
     }
 }
 
-@media (min-width:1040){
+@media  only screen and (min-width:1041px){
+    h1{
+        color:#3a4197
+    }
     header{
         grid-column: 1 / 4;
         grid-row: 1/ 2;
     }
-    
-    footer{
-        grid-column: 1 / 4;
-        grid-row: 3/ 4;
+
+    main{
+        grid-column: 2 / 3;
+        grid-row: 2/ 3;
     }
     
     nav{
@@ -261,7 +263,12 @@ figcaption {
         
     }
 
+    footer{
+        grid-column: 1 / 4;
+        grid-row: 3/ 4;
+    }
+
     .container{
-        grid-template-columns:0.3fr 1fr 0.1fr ;
+        grid-template-columns:0.3fr 1fr;
     }
 }
