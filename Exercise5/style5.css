@@ -184,7 +184,6 @@ img:not(header img){
     header{
         grid-column: 1 / 3;
         grid-row: 1/ 2;
-        background-color: red;
     }
     
     footer{
