@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style7.css">
+    <title>Python Basics</title>
+    <script src="jsfile.js" type="text/javascript"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="pictures/python-icon.png" alt="Python icon" width="70" height="70" id="python-icon"></a>
+            <h1 id="h1">Python Basics</h1>
+            <div id="input">
+                <input type="submit" onclick="change2Blue()" id="sumbit" name="submit" value="Make it Blue">
+            </div>
+            </header>
+        <nav> 
+            <ul class="menu">
+                <li><a href="index.html">Home Page</a></li>
+                <li><a href="data_structures.html">Data Structures</a></li>
+                <li><a href="history.html">History of Python</a></li>
+                <li><a href="form.html">Form</a></li>
+            </ul>
+        </nav>
+        <main>
+            <h2>Φόρμα Επικοινωνίας</h2>
+            <form action="mailto:p3180079@aueb.gr" method="post" enctype="text/plain">
+                <fieldset>
+                    <legend>Πληκτρολογήστε παρακάτω τα στοιχεία σας</legend>
+                    <div>
+                        <label for="name">Όνομα:</label>
+                        <input type="text" id="name" name="name" placeholder="Κωνσταντίνος" required>
+                    </div>
+                    <div>
+                        <label for="sur">Επίθετο:</label>
+                        <input type="text" id="sur" name="surname" placeholder="Παπαδόπουλος" required>
+                    </div>
+                    <div>
+                        <label for="mail">Email:</label>
+                        <input type="email" id="mail" name="email" placeholder="name@email.com" required>
+                    </div>
+                    <div>
+                        <label for="tel">Τηλέφωνο:</label>
+                        <input type="text" id="tel" name="tel" placeholder="6912345678" required>
+                    </div>
+                    <div>
+                        <label for="date">Ημερομηνία Γέννησης:</label>
+                        <input type="date" id="date" name="date" value="2000-07-22" min="1930-01-01" max="2021-4-30">
+                    </div>
+                    <div>
+                        <label for="country">Χώρα:</label>
+                        <select id="country" name ="country">
+                            <optgroup label="Ευρώπη">
+                                <option value="greece">Ελλάδα</option>
+                            </optgroup>
+                            <optgroup label="Ασία">
+                                <option value="china">Κίνα</option>
+                            </optgroup>
+                            <optgroup label="Αμερική">
+                                <option value="america">Αμερική</option>
+                            </optgroup>
+                            <optgroup label="Αυστραλία">
+                                <option value="australia">Αυστραλία</option>
+                            </optgroup>
+                            <optgroup label="Αφρική">
+                                <option value="africa">Αφρική</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+                    <div>
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+
+
+
+                    <div>
+                        <fieldset>
+                            <legend>Φύλο</legend>
+                            <div>
+                                <label for="man">Άντρας</label>
+                                <input type="radio" value=man name=sex id="man" checked>
+                            </div>
+                            <div>
+                                <label for="woman">Γυναίκα</label>
+                                <input type="radio" value=woman name=sex id="woman">
+                            </div>
+                            <div>
+                                <label for="other">Άλλο</label>
+                                <input type="radio" value=other name=sex id="other">
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div>
+                        <input type="submit" value="Υποβολή"/>
+                    </div>
+                </fieldset>
+        </main>
+        <aside>
+        </aside>
+        <footer>
+            <p id="pfooter"></p>
+            <p>Copyright &#169; 2021 Python Basics - All rights reserved</p>
+        </footer>
+    </div>
+</body>
+</html>
