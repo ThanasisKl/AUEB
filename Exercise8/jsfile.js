@@ -26,7 +26,7 @@ window.onload = function() {
         dayname = "Saturday";
     }
 
-    document.getElementById("pfooter").innerHTML = "Current Date: "+ d.getDate() +" " + dayname + " " + d.getFullYear(); // website changes footer based on the day of the week
+    document.getElementById("pfooter").innerHTML = "Current Date: "+ dayname + " " + d.getDate() +" " + d.getMonth() + "<- " + d.getFullYear(); // website changes footer based on the day of the week
 }
 
 
