@@ -272,3 +272,34 @@ img:not(header img){
         grid-template-columns:0.3fr 1fr 0.5fr;
     }
 }
+
+input,select,label{
+    display:block;
+}
+
+/*
+input{
+    display:inline block;
+}
+
+label{
+    color: black;
+}*/
+/*
+input, select {
+    /*display:inline-block;
+    margin-right:90px;
+    margin-bottom: 1.1em;
+    float:right;
+}
+*/
+label {
+    display:inline-block;
+    margin-bottom: 0.2em;
+}
+
+input,select{
+    margin-bottom: 1.3em;
+    width:60%;
+    height:25px;
+}

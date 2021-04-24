@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="style7.css">
+    <link rel="stylesheet" type="text/css" href="style8.css">
     <title>Python Basics</title>
     <script src="jsfile.js" type="text/javascript"></script>
 </head>
@@ -14,7 +14,7 @@
             <img src="pictures/python-icon.png" alt="Python icon" width="70" height="70" id="python-icon"></a>
             <h1 id="h1">Python Basics</h1>
             <div id="input">
-                <input type="submit" onclick="change2Blue()" id="sumbit" name="submit" value="Make it Blue">
+                <input type="button" onclick="change2Blue()" id="sumbit" name="submit" value="Make it Blue">
             </div>
             </header>
         <nav> 
@@ -30,89 +30,173 @@
             <form action="mailto:p3180079@aueb.gr" method="post" enctype="text/plain">
                 <fieldset>
                     <legend>Πληκτρολογήστε παρακάτω τα στοιχεία σας</legend>
-                    <div>
-                        <label for="name">Όνομα:</label>
-                        <input type="text" id="name" name="name" placeholder="Κωνσταντίνος" required>
-                    </div>
-                    <div>
-                        <label for="sur">Επίθετο:</label>
-                        <input type="text" id="sur" name="surname" placeholder="Παπαδόπουλος" required>
-                    </div>
-                    <div>
-                        <label for="mail">Email:</label>
-                        <input type="email" id="mail" name="email" placeholder="name@email.com" required>
-                    </div>
-                    <div>
-                        <label for="tel">Τηλέφωνο:</label>
-                        <input type="text" id="tel" name="tel" placeholder="6912345678" required>
-                    </div>
-                    <div>
-                        <label for="date">Ημερομηνία Γέννησης:</label>
-                        <input type="date" id="date" name="date" value="2000-07-22" min="1930-01-01" max="2021-4-30">
-                    </div>
-                    <div>
-                        <label for="country">Χώρα:</label>
-                        <select id="country" name ="country">
-                            <optgroup label="Ευρώπη">
-                                <option value="greece">Ελλάδα</option>
-                            </optgroup>
-                            <optgroup label="Ασία">
-                                <option value="china">Κίνα</option>
-                            </optgroup>
-                            <optgroup label="Αμερική">
-                                <option value="america">Αμερική</option>
-                            </optgroup>
-                            <optgroup label="Αυστραλία">
-                                <option value="australia">Αυστραλία</option>
-                            </optgroup>
-                            <optgroup label="Αφρική">
-                                <option value="africa">Αφρική</option>
-                            </optgroup>
-                        </select>
-                    </div>
-                    <div>
-                        <label for="username">Username:</label>
-                        <input type="text" id="username" name="username" required>
-                    </div>
-                    <div>
-                        <label for="password">Password:</label>
-                        <input type="password" id="password" name="password" required>
-                    </div>
-                    <div>
-                        <input type="submit" value="Υποβολή"/>
+                    <div class="basicForm">
+                        <div>
+                            <label for="name">Όνομα:</label>
+                            <input type="text" id="name" name="name" placeholder="Κωνσταντίνος" pattern="[A-Za-z]+" autocomplete="on" required>
+                        </div>
+                        <div>
+                            <label for="sur">Επίθετο:</label>
+                            <input type="text" id="sur" name="surname" placeholder="Παπαδόπουλος" pattern="[A-Za-z]+" autocomplete="on" required>
+                        </div>
+                        <div>
+                            <label for="mail">Email:</label>
+                            <input type="email" id="mail" name="email" placeholder="name@email.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" autocomplete="on" required>
+                        </div>
+                        <div>
+                            <label for="tel">Τηλέφωνο:</label>
+                            <input type="text" id="tel" name="tel" placeholder="6912345678" pattern="[0-9]{10}" required>
+                        </div>
+                        <div>
+                            <label for="date">Ημερομηνία Γέννησης:</label>
+                            <input type="date" id="date" name="date" value="2000-07-22" min="1930-01-01" max="2021-4-30">
+                        </div>
+                        <div>
+                            <label for="country">Χώρα:</label>
+                            <select id="country" name ="country">
+                                <optgroup label="Ευρώπη">
+                                    <option value="greece">Ελλάδα</option>
+                                    <option value="cyprus">Κύπρος</option>
+                                    <option value="albania">Αλβανία</option>
+                                    <option value="france">Γαλλία</option>
+                                    <option value="germany">Γερμανία</option>
+                                    <option value="russia">Ρωσία</option>
+                                    <option value="otherE">Άλλη Ευρωπαϊκή Χώρα</option>
+                                </optgroup>
+                                <optgroup label="Ασία">
+                                    <option value="china">Κίνα</option>
+                                    <option value="japan">Ιαπωνία</option>
+                                    <option value="korea">Κορέα</option>
+                                    <option value="turkey">Τουρκία</option>
+                                    <option value="india">Ινδία</option>
+                                    <option value="otherAs">Άλλη Ασιάτικη Χώρα</option>
+                                </optgroup>
+                                <optgroup label="Αμερική">
+                                    <option value="america">Αμερική</option>
+                                </optgroup>
+                                <optgroup label="Αυστραλία">
+                                    <option value="australia">Αυστραλία</option>
+                                </optgroup>
+                                <optgroup label="Αφρική">
+                                    <option value="egypt">Αίγυπτος</option>
+                                    <option value="algeria">Αλγερία</option>
+                                    <option value="ethiopia">Αιθιοπία</option>
+                                    <option value="otherAf">Άλλη Αφρικάνικη Χώρα</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="username">Username:</label>
+                            <input type="text" id="username" name="username"  pattern="[A-Za-z0-9_]{6,15}" required>
+                        </div>
+                        <div>
+                            <label for="password">Password:</label>
+                            <input type="password" id="password" name="password" pattern ="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"required><!--accept at least one number and one uppercase and lowercase letter, and at least 6 or more characters-->
+                        </div>
                     </div>
                 </fieldset>
 
                 <h2>Ερωτηματολόγιο</h2>
                 <fieldset>
                     <legend>Απαντήστε στις παρακάτω ερωτήσεις</legend>
-                    <fieldset>
-                        <legend>Φύλο</legend>
-                        <div>
-                            <label for="man">Άντρας</label>
-                            <input type="radio" value=man name=sex id="man" checked>
-                        </div>
-                        <div>
-                            <label for="woman">Γυναίκα</label>
-                            <input type="radio" value=woman name=sex id="woman">
-                        </div>
-                        <div>
-                            <label for="other">Άλλο</label>
-                            <input type="radio" value=other name=sex id="other">
-                        </div>
-                    </fieldset>
+                    <p>Φύλο</p>
                     <div>
-                        <p>Ποιες γλώσσες προγραμματισμού ξέρετε;</p>
-                        <input type="checkbox" id="java" name="java" value="java">
-                        <label for="java">Java</label><br>
-                        <input type="checkbox" id="python" name="python" value="python">
-                        <label for="python">Python</label><br>
-                        <input type="checkbox" id="c name="c" value="c">
-                        <label for="c">C/C++</label><br>
-                        <input type="checkbox" id="csharp" name="csharp" value="csharp">
-                        <label for="java">C#</label>
+                        <label for="man">Άντρας</label>
+                        <input type="radio" value="man" name=sex id="man" checked>
+                    </div>
+                    <div>
+                        <label for="woman">Γυναίκα</label>
+                        <input type="radio" value="woman" name="sex" id="woman">
+                    </div>
+                    <div>
+                        <label for="other">Άλλο</label>
+                        <input type="radio" value="other" name="sex" id="other">
+                    </div>
+                    <div>
+                        <label for="programming">Ποιες γλώσσες προγραμματισμού ξέρετε;</label>
+                        <input list="programmingL" name="programming" id="programming" autocomplete="on">
+                        <datalist id="programmingL">
+                            <option value="Java">
+                            <option value="Python">
+                            <option value="C/C++">
+                            <option value="C#">
+                        </datalist>
+                    </div>
+                    <div>
+                        <details>
+                            <summary>Γράψτε μερικά λόγια που να χαρακτηρίζουν την προσωπικότητα σας.</summary>
+                            <textarea rows="8" cols="50" name="comments" id="com">Γράψτε εδώ...</textarea>
+                        </details>
+                        </div>
+                    <div>
+                        <p>Θα θέλατε να δουλέψετε σαν προγραμματιστής στο μέλλον;</p>
+                        <div>
+                            <label for="yes">Ναι</label>
+                            <input type="radio" value="yes" name="work" id="yes" checked>
+                        </div>
+                        <div>
+                            <label for="no">Όχι</label>
+                            <input type="radio" value="no" name="work" id="no">
+                        </div>
+                        <div>
+                            <label for="maybe">Ίσως</label>
+                            <input type="radio" value="maybe" name="work" id="maybe">
+                        </div>
+                    </div>
+                    <div>
+                        <p>Σπουδάζεται πάνω στο αντικείμενο;</p>
+                        <div>
+                            <label for="yes2">Ναι</label>
+                            <input type="radio" value="yes2" name="study" id="yes2" checked>
+                        </div>
+                        <div>
+                            <label for="no2">Όχι</label>
+                            <input type="radio" value="no2" name="study" id="no2">
+                        </div>
+                    </div>
+                    <div>
+                        <details>
+                            <summary>Γράψτε γιατί σας αρέσει να προγραμματίζεται.</summary>
+                            <textarea rows="8" cols="50" name="comments2" id="com2">Γράψτε εδώ...</textarea>
+                        </details>
+                    </div>
+                    <div>
+                        <label for="browser">Ποιο browser χρησιμοποείται;</label>
+                        <input list="browsers" name="browser" id="browser" autocomplete="on">
+                        <datalist id="browsers">
+                            <option value="Edge">
+                            <option value="Firefox">
+                            <option value="Chrome">
+                            <option value="Opera">
+                            <option value="Safari">
+                            <option value="Other">
+                        </datalist>
+                    </div>
+                    <div>
+                        <p>Έχετε παρακολουθήσει κάποιο σεμινάριο πληροφορικής;</p>
+                        <div>
+                            <label for="yes3">Ναι</label>
+                            <input type="radio" value="yes3" name="seminar" id="yes3" checked>
+                        </div>
+                        <div>
+                            <label for="no3">Όχι</label>
+                            <input type="radio" value="no3" name="seminar" id="no3">
+                        </div>
+                    </div>
+                    <div>
+                        <details>
+                            <summary>Ποια ενδιαφέροντα έχετε πέρα απο τον προγραμματισμό;</summary>
+                            <textarea rows="8" cols="50" name="comments3" id="com3">Γράψτε εδώ...</textarea>
+                        </details>
+                        </div>
+                    <div>
+                        <label for="vol">Πόσο σας άρεσε η ιστοσελίδα Python Basics;</label>
+                        <input type="range" id="vol" name="vol" min="0" max="10">
                     </div>
                 </fieldset>
+                <div>
+                    <input type="submit" value="Υποβολή"/>
+                </div>
         </main>
         <aside>
         </aside>
