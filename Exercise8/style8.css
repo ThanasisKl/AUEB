@@ -195,6 +195,10 @@ img:not(header img){
         margin-right: auto;
         margin-left: auto;
     }
+
+    .inputF, .selectF, .inputE{
+        width:100%;
+    }
 }
 
 @media only screen and (min-width:451px) and (max-width:1040px){
@@ -234,6 +238,14 @@ img:not(header img){
         grid-template-columns: 0.2fr 1fr;
         grid-template-rows: 0.05fr 2fr 0.1fr 0.05fr ;
     }
+
+    summary{
+        cursor: pointer;
+    }
+
+    .inputF, .selectF, .inputE{
+        width:80%;
+    }
 }
 
 @media  only screen and (min-width:1041px){
@@ -271,35 +283,71 @@ img:not(header img){
     .container{
         grid-template-columns:0.3fr 1fr 0.5fr;
     }
+
+    summary{
+        cursor: pointer;
+    }
+
+    .inputF, .selectF, .inputE{
+        width:60%;
+    }
 }
 
-input,select,label{
+.inputF, .selectF, .labelF{
     display:block;
 }
 
-/*
-input{
-    display:inline block;
-}
-
-label{
-    color: black;
-}*/
-/*
-input, select {
-    /*display:inline-block;
-    margin-right:90px;
-    margin-bottom: 1.1em;
-    float:right;
-}
-*/
-label {
+.labelF {
     display:inline-block;
     margin-bottom: 0.2em;
+    font-size: 1.1em;
 }
 
-input,select{
+.inputF, .selectF, .inputE{
     margin-bottom: 1.3em;
-    width:60%;
     height:25px;
+    border-radius: 25px;
+    border: 2px solid black;
+    background-color: lightblue;
+    font-size: 1em;
+}
+
+.space{
+    margin-bottom: 1.7em;
+    font-size: 1.1em;
+}
+
+.titl{
+    display:block;
+    margin-bottom: 0.8em;
+}
+
+legend{
+    font-size: 1.25em;
+}
+
+textarea{
+    margin-top:1.1em;
+    border: 2px solid black;
+    background-color: lightblue;
+    border-radius: 10px;
+}
+
+legend,.inputF, .selectF, .inputE, .space{
+    font-family: Arial,sans-serif;
+}
+
+#quest{
+    display:block;
+    margin-top: 3em;
+}
+
+#sumbt{
+    float:right;
+    margin-top:20px;
+    margin-bottom:30px;
+    margin-right: 20px;
+    font-size:1.3em;
+    background-color: lightblue;
+    cursor: pointer;
 }

@@ -26,7 +26,8 @@ window.onload = function() {
         dayname = "Saturday";
     }
 
-    document.getElementById("pfooter").innerHTML = "Current Date: "+ dayname + " " + d.getDate() +" " + d.getMonth() + "<- " + d.getFullYear(); // website changes footer based on the day of the week
+    let month = d.getMonth()+1;
+    document.getElementById("pfooter").innerHTML = "Current Date: "+ dayname + " " + d.getDate() +" - " + month + " - " + d.getFullYear(); // website changes footer based on the day of the week
 }
 
 
@@ -45,10 +46,10 @@ function change2Yellow(){    //CSS Change
 }
 
 function changeHTML1(){    //HTML Change
-    document.getElementById("input").innerHTML = "<input type='submit' onclick='change2Yellow()' id='sumbit' name='submit' value='Make it Yellow'>";
+    document.getElementById("input").innerHTML = "<input type='submit' onclick='change2Yellow()' id='sumbit' name='submit' value='Light Theme'>";
 }
 
 function changeHTML2(){   //HTML Change
-    document.getElementById("input").innerHTML = "<input type='submit' onclick='change2Blue()' id='sumbit' name='submit' value='Make it Blue'>";
+    document.getElementById("input").innerHTML = "<input type='submit' onclick='change2Blue()' id='sumbit' name='submit' value='Dark Theme'>";
 }
 
