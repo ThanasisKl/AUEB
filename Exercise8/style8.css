@@ -333,7 +333,7 @@ textarea{
     border-radius: 10px;
 }
 
-legend,.inputF, .selectF, .inputE, .space{
+legend,.inputF, .selectF, .inputE, .space, .p, .labelF{
     font-family: Arial,sans-serif;
 }
 
