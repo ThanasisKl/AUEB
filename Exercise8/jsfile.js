@@ -1,13 +1,5 @@
 window.onload = function() {
-    let paragraphs = document.querySelectorAll("p"); //DOM query 1
-    console.log(`Total p tags in this page: ${paragraphs.length}`);
-
-    console.log("All h3 tags in this page: ");
-    let h3s =document.querySelectorAll("h3");  //DOM query 2
-    for (let h3 of h3s){
-        console.log(h3);
-    }
-
+   
     const d = new Date();     // Date obeject use
     let dayname = "";
     if(d.getDay() === 0){
@@ -53,3 +45,17 @@ function changeHTML2(){   //HTML Change
     document.getElementById("input").innerHTML = "<input type='submit' onclick='change2Blue()' id='sumbit' name='submit' value='Dark Theme'>";
 }
 
+function usernameHandler(event){
+    var username = document.getElementById("username")
+    console.log(username);
+    //if(username.value)
+    let flag = true;
+
+    if(flag){
+        username.setCustomValidity('ghghghghhg');
+    }else{
+        username.setCustomValidity('');
+    }
+}
+
+window.addEventListener('load',usernameHandler)
