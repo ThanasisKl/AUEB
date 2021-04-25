@@ -27,7 +27,7 @@
         </nav>
         <main>
             <h2>Φόρμα Επικοινωνίας</h2>
-            <form action="mailto:p3180079@aueb.gr" method="post" enctype="text/plain">
+            <form>
                 <fieldset>
                     <legend>Πληκτρολογήστε παρακάτω τα στοιχεία σας</legend>
                     <div class="basicForm">
@@ -90,8 +90,8 @@
                             <input type="text" class="inputF" id="username" name="username"  pattern="[A-Za-z0-9_]{6,15}" required>
                         </div>
                         <div>
-                            <label for="password" class="labelF">Password:</label>
-                            <input type="password" class="inputF" id="password" name="password" pattern ="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"required><!--accept at least one number and one uppercase and lowercase letter, and at least 6 or more characters-->
+                            <label for="password1" class="labelF">Password:</label>
+                            <input type="password" class="inputF" id="password1" name="password" pattern ="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"required><!--accept at least one number and one uppercase and lowercase letter, and at least 6 or more characters-->
                         </div>
                         <div>
                             <label for="password2" class="labelF">Επιβεβαίωη Password:</label>
@@ -201,7 +201,7 @@
                     </div>
                 </fieldset>
                 <div>
-                    <input id="sumbt" type="submit" value="Υποβολή"/>
+                    <input id="submit" type="submit" value="Υποβολή"/>
                 </div>
         </main>
         <aside>
