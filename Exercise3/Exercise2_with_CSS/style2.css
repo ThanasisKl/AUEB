@@ -84,11 +84,11 @@ nav ul li a{
     text-decoration:none; 
 }
 
-a:link:not(#header-nav a) {
+a:link:not(#header-nav a){
     color: coral;
 }
 
-  a:visited:not(#header-nav a) {
+a:visited:not(#header-nav a){
     color: red;
 }
 
