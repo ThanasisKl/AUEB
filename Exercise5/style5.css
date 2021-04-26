@@ -139,7 +139,7 @@ img{
     margin-bottom: 30px;
 }
 
-img:not(header img){
+img:not(#python-icon){
     max-width:100%;
     margin-top:2em;
 }

@@ -58,7 +58,6 @@ nav ul{
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    align-items: left;
 }
 
 .menu li a {
@@ -92,7 +91,7 @@ input{
     border:3px solid;
     padding: 1em 2em;
     font-size: 1em;
-    transition: all 0.25 s;
+    transition: all 0.25s;
 }
 
 input:hover{
@@ -159,7 +158,7 @@ img{
     margin-bottom: 30px;
 }
 
-img:not(header img){
+img:not(#python-icon){
     max-width:100%;
     margin-top:2em;
 }
