@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hello World</title>
+  <script src = "test.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.1/handlebars.min.js"></script>
+ 
+  <script id="text-template" type="text/x-handlebars-template">
+    <ul id=search_list>
+      {{#each employees}}
+        <li>{{firstName}}</li>
+      {{/each}}  
+    </ul>
+  </script> 
+ 
+</head>
+<body>
+ 
+First name: <input id="first_name">
+Last name: <input id="last_name">
+<button id="say">Say hi!</button>
+ 
+<hr>
+<div id="result"></div>
+ 
+</body>
+</html>

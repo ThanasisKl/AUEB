@@ -4,7 +4,6 @@ window.onload = function(){
 
     document.getElementById("button").addEventListener("click", function(){
         let keyword = document.getElementById("search").value;
-        search_list = [];
         if(keyword.trim()!==""){
             let url ="https://reststop.randomhouse.com/resources/works?search="+keyword
             //let url = "https://reststop.randomhouse.com/resources/authors?lastName="+keyword
@@ -14,11 +13,17 @@ window.onload = function(){
             .then(data => {
                 console.log(`Results for Search ${keyword}:`);
                 try{
+                    console.log(data);
                     for(var i = 0; i < data.work.length; i++) {
-                        console.log("Title, Author: "+ data.work[i].titleAuth);
+                        var source   = document.getElementById('text-template').innerHTML;
+                        var template = Handlebars.compile(source);
+                        var html = template(data);
+                        let li = document.getElementById('search_results') ;
+                        li.innerHTML = html;
                     }
                 }catch(err){
-                    console.log("No results for this Search")
+                    console.log("No results for this Search");
+                    document.getElementById("search_results").innerHTML = "<h2>No Results</h2>"
                 }
             })
         }else{
@@ -46,33 +51,61 @@ window.onload = function(){
                                 
                             }
                         }
+
+                        //getAuthors(work_ids);
+                        
                         //console.log(work_ids);
-                        list=[];
+                        var search = '{"results_list" : []}';
+                        //const obj = JSON.parse(search);
+                        const obj = JSON.parse(search);
                         for(var x = 0; x < work_ids.length; x++) {
                             //console.log(work_ids[x]);
                             url = "https://reststop.randomhouse.com/resources/works/"+work_ids[x];
                             getFetch(url)
                             .then(data => data.json())
                             .then(data => {
-                                console.log("Title, Author: "+ data.titleAuth);
-                                search_list.push(data.titleAuth);
-                                list.push({"search":data.titleAuth});
+                                // console.log("Title, Author: "+ data.titleAuth);
+                                // search_list.push(data.titleAuth);
+                                obj["results_list"].push({"search": data.titleAuth});
+                                // search = JSON.stringify(obj);
+                                //console.log(search);
+                                //console.log(data);
+                                // var source   = document.getElementById('text-template2').innerHTML;
+                                // var template = Handlebars.compile(source);
+                                //console.log(obj);
+                                // var html = template(data.titleAuth);
+                                // let li = document.getElementById('search_results') ;
+                                // li.innerHTML = html;
                             })
                             
                             
-                        }
-                        console.log("->");
-                        console.log(list);
+                        }   
 
-                        list = [];
-                        list.push({"search1":2});
-                        var template = document.getElementById('search_list_template').innerHTML;
-                        var render = Handlebars.compile(template);
-                        document.getElementById('search_list').innerHTML = render({
-                        search: list,
-                        });
+                        setTimeout(function() {
+                            console.log("-------------->");
+                            var source   = document.getElementById('text-template2').innerHTML;
+                            var template = Handlebars.compile(source);
+                            //console.log(obj);
+                            var html = template(obj);
+                            let li = document.getElementById('search_results') ;
+                            li.innerHTML = html;
+                        }, 3000);
+                        
+
+                        
+                
+                        // var source   = document.getElementById('text-template').innerHTML;
+                        // var template = Handlebars.compile(source);
+                        // console.log(obj);
+                        // var html = template(obj);
+                        // let li = document.getElementById('search_results') ;
+                        // li.innerHTML = html;
+
+                        
+    
                     }catch(err){
                         console.log("No results for this Search")
+                        document.getElementById("search_results").innerHTML = "<h2>No Results</h2>"
                     }
                 })
             }else{

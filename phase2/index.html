@@ -6,6 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Search Machine</title>
     <script src = "https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <script id="text-template" type="text/x-handlebars-template">
+        <ul id=search_list>
+            <h2 class="results" >Search Results</h2>
+            {{#each work}}
+            <li>{{titleAuth}}</li>
+            {{/each}}
+        </ul>
+    </script>
+    <script id="text-template2" type="text/x-handlebars-template">
+        <ul id=search_list>
+            <h2 class="results">Search Results</h2>
+            {{#each results_list}}
+            <li>{{search}}</li>
+            {{/each}}
+        </ul>
+    </script>
     <link rel="stylesheet" type="text/css" href="style8.css">
     <script src = "test.js"></script>
     <script src = "main.js"></script>
@@ -26,17 +42,13 @@
         <input type="text" id="search2" name="search2" placeholder="Search Here">
         </div>
         <button id="button">Search</button>
+        <div id = "div"></div>
         <section>      
-            <template id="search_list_template">
-                <ul id=search_list>
-                    {{#each search}}
-                    <li>{{search1}}</li>
-                    {{/each}}
-                </ul>
-            </template>
+            <div id="search_results"></div>
         </section>
+    </main>
     <footer>
-
+        <p>Copyright &#169; 2021 Search Machine - All rights reserved</p>
     </footer>
     </div>
 </body>
