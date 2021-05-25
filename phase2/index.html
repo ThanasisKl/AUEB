@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Machine</title>
+    <script src = "https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <link rel="stylesheet" type="text/css" href="style8.css">
+    <script src = "test.js"></script>
+    <script src = "main.js"></script>
+</head>
+<body>
+    <div class="container">
+    <header>
+        <h1>Search Books</h1>
+    </header>
+    <main>
+        <h2>Search Machine based on Penguin Random House API</h2>
+        <label for="search" class="labelF">Search For Books:</label>
+        <div>
+        <input type="text" id="search" name="search" placeholder="Search Here">
+        </div>
+        <label for="search2" class="labelF">Search For Authors:</label>
+        <div>
+        <input type="text" id="search2" name="search2" placeholder="Search Here">
+        </div>
+        <button id="button">Search</button>
+        <section>      
+            <template id="search_list_template">
+                <ul id=search_list>
+                    {{#each search}}
+                    <li>{{search1}}</li>
+                    {{/each}}
+                </ul>
+            </template>
+        </section>
+    <footer>
+
+    </footer>
+    </div>
+</body>
+</html>

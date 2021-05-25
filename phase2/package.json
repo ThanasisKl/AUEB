@@ -1,0 +1,18 @@
+{
+  "name": "test_project",
+  "version": "1.0.0",
+  "description": "loloolololo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "test",
+    "example"
+  ],
+  "author": "Thanasis Klettas",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
