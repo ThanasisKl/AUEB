@@ -1,18 +1,20 @@
 {
-  "name": "test_project",
+  "name": "phase2",
   "version": "1.0.0",
-  "description": "loloolololo",
+  "description": "Project 2",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [
-    "test",
-    "example"
-  ],
-  "author": "Thanasis Klettas",
-  "license": "MIT",
   "dependencies": {
     "express": "^4.17.1"
-  }
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  },
+  "scripts": {
+    "start": "node index",
+    "dev" : "nodemon index"
+  },
+  "author": "Thanasis Klettas",
+  "license": "MIT"
 }
+
+
