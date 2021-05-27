@@ -109,7 +109,6 @@ function createListeners2Buttons(){
     let elements = document.getElementsByClassName("save");
     for (var i = 0; i < elements.length; i++) {
         elements[i].addEventListener('click',function(){
-            console.log("SAVED id: " + this.id)
             let x = document.getElementById(this.id+'_');
             console.log(x.textContent)
             saveBook(this.id,x.textContent);
@@ -134,5 +133,59 @@ let responseJSON = {
   if(response.ok){
       let statusResponse = await response.json();
       console.log(statusResponse);
+      let div = document.getElementById(bookid+"d");
+      console.log(button);
+      console.log("SAVED id: " + bookid)
+      div.innerHTML = `<button id=${bookid+"dbtn"} class="delete">Delete</button>`
+      let btn = document.getElementById(bookid+"dbtn");
+      createListeners2DelButtons();
+  }else{
+      console.log("Already saved");
+      let p = document.getElementById(bookid+"p") 
+      p.innerHTML = "Already Saved";
+      setTimeout(function(){p.innerHTML = "";},1500);  //Already Saved message appears for 1.5 sec in the screen and then disappears
   }
 }
+
+
+function createListeners2DelButtons(){
+    let elements = document.getElementsByClassName("delete");
+    for (var i = 0; i < elements.length; i++) {
+        elements[i].addEventListener('click',function(){
+            //console.log("SAVED id: " + this.id)
+            let x = document.getElementById(this.id+'dbtn');
+            //console.log(x.textContent)
+            deleteBook(this.id);
+        });
+    }
+}
+
+async function deleteBook(bookid){
+
+    var pos = bookid.search("d"); // bookid : 12345dbtn
+     id = bookid.slice(0,pos);    // id : 12345
+  
+    let responseJSON = {
+        method: 'DELETE',
+        mode: 'cors', 
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          id: parseInt(id)
+        })
+      };
+      console.log(responseJSON.body);
+      console.log("ID: "+id);
+      let response = await fetch('http://localhost:3000/api/FaveBooks/'+ id,responseJSON);
+      if(response.ok){
+          let statusResponse = await response.json();
+          console.log(statusResponse);
+          console.log("DELETED id:"+id);
+
+          let div = document.getElementById(id+"d"); ;
+    
+          div.innerHTML = " "; // delete button delete after deletion
+
+      }
+    }

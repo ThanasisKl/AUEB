@@ -33,6 +33,7 @@ footer{
     grid-column: 1/ 4;
     background-color: #1c8ff3;
     text-align: center;
+    padding-top: 20px;
 }
  
 main{
@@ -90,6 +91,11 @@ h2{
     color:#3776ab;
 }
 
+p:not(footer p){
+    color:#3776ab;
+    margin-top: -10px;
+}
+
 input{
     font-size: 1.1em;
     width:50%;
@@ -120,4 +126,37 @@ button{
     font-size: 1.1em;
 }
 
+#list{
+    float:right;
+    color:#3776ab;
+    margin-right: 30px;
+    text-decoration: none;
+    font-size:1.4em;
+    background-color: #c7e1f7;
+    border: solid black;
+    padding:0.5em;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+#list:hover{
+    color:black;
+    background-color:#1c8ff3 ;
+}
+
+.delete{
+    color:black;
+}
+
+.del{
+    display: inline-block;
+}
+
+.save:hover{
+    color:gold;
+}
+
+.delete:hover{
+    color:white;
+}
 

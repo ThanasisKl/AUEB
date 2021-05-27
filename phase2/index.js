@@ -35,14 +35,14 @@ app.post('/api/FaveBooks',(req,res)=>{
     };
     //check if every attribute is given
     if(!newBook.id || !newBook.title_auth){
-        return res.status(404).json({msg: "Please include book id, author and title"});
+        return res.status(404).json({msg: "Please include book id, title_auth"});
     }
 
     //check if book already exists in savedBooks
     const found = books.some(book => book.id === newBook.id);
 
     if(found){
-        return res.status(404).json({msg: "Book already saved"});
+        return res.status(400).json({msg: "Book already saved"});
     }
 
     books.push(newBook);
@@ -64,7 +64,7 @@ app.delete('/api/FaveBooks/:id', (req,res) =>{
             books: books
         });
     }else{
-        res.status(404).json( {msg: 'Book not found to delete'});
+        //res.status(404).json( {msg: 'Book not found to delete'});
     }  
 })
 
