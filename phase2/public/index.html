@@ -10,8 +10,8 @@
         <ul id=search_list>
             <h2 class="results">Search Results</h2>
             {{#each work}}
-            <li>{{titleAuth}}</li>
-            <button id={{workid}} class="save">save</button>
+            <li id={{workid}}_>{{titleAuth}}</li>
+            <button id={{workid}} class="save" value=htmlspecialchars({{titleAuth}})>save</button>
             {{/each}}
         </ul>
     </script>

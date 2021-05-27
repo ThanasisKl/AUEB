@@ -110,8 +110,29 @@ function createListeners2Buttons(){
     for (var i = 0; i < elements.length; i++) {
         elements[i].addEventListener('click',function(){
             console.log("SAVED id: " + this.id)
-            let x = document.getElementById(this.id);
-            console.log(x)
+            let x = document.getElementById(this.id+'_');
+            console.log(x.textContent)
+            saveBook(this.id,x.textContent);
         });
     }
+}
+
+async function saveBook(bookid,titleAuth){
+let responseJSON = {
+    method: 'POST',
+    mode: 'cors', 
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      id: parseInt(bookid),
+      title_auth :titleAuth
+    })
+  };
+  console.log(responseJSON.body);
+  let response = await fetch('http://localhost:3000/api/FaveBooks',responseJSON);
+  if(response.ok){
+      let statusResponse = await response.json();
+      console.log(statusResponse);
+  }
 }
