@@ -85,7 +85,7 @@ app.delete('/api/FaveBooks/:id', (req,res) =>{
             books: books
         });
     }else{
-        //res.status(404).json( {msg: 'Book not found to delete'});
+        res.json({msg: 'Book not found to delete'});
     }  
 })
 

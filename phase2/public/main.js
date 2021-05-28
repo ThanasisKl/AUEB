@@ -1,43 +1,42 @@
-
-
 window.onload = function(){
 
     document.getElementById("button").addEventListener("click", function(){
         let keyword = document.getElementById("search").value;
-        if(keyword.trim()!==""){
+        if(keyword.trim()!==""){      //search for a book
             let url ="https://reststop.randomhouse.com/resources/works?search="+keyword
-            console.log(url);
+            console.log(`Searching ${url}`);
             getFetch(url)
             .then(data => data.json())
             .then(data => {
-                console.log(`Results for Search ${keyword}:`);
                 try{
-                    console.log(data);
-                    for(var i = 0; i < data.work.length; i++) {
+                    // console.log(data);
+                    for(var i = 0; i < data.work.length; i++) {  //for every work
                         var source   = document.getElementById('text-template').innerHTML;
                         var template = Handlebars.compile(source);
                         var html = template(data);
                         let li = document.getElementById('search_results') ;
                         li.innerHTML = html;
                     }
-                    createListeners2Buttons();
-                }catch(err){
-                    console.log("No results for this Search");
+                    createListeners2Buttons();            //creates event listeners to every save buttons
+                }catch(err){                               //No results for the search
+                    console.log("No results for this Search");   
                     document.getElementById("search_results").innerHTML = "<h2>No Results</h2>"
                 }
             })
-        }else{
+            .catch(err => {           //bad http code status
+                console.log(err);
+            })
+        }else{    //search for author books
             keyword = document.getElementById("search2").value;
             if(keyword.trim()!==""){
                 let url = "https://reststop.randomhouse.com/resources/authors?lastName="+keyword;
-                console.log(url);
+                console.log(`Searching ${url}`);
                 getFetch(url)
                 .then(data => data.json())
                 .then(data => {
-                    console.log(`Results for Search ${keyword}:`);
                     let work_ids;
                     try{
-                        work_ids = findWorkIds(data);
+                        work_ids = findWorkIds(data);  //stores all workids from authors
                         var search = '{"results_list" : []}';
                         const obj = JSON.parse(search);
                         for(var x = 0; x < work_ids.length; x++) {
@@ -45,37 +44,36 @@ window.onload = function(){
                             getFetch(url)
                             .then(data => data.json())
                             .then(data => {
-                                console.log(data.workid);
-                                obj["results_list"].push({"search": data.titleAuth,"id":data.workid});
+                                // console.log(data.workid);
+                                obj["results_list"].push({"search": data.titleAuth,"id":data.workid});//stores title,author,workids
                             })
-                            
+                            .catch(err => {           //bad http code status
+                                console.log(err);
+                            })
                             
                         }   
 
                         setTimeout(function() {
-                            console.log("-------------->");
                             var source   = document.getElementById('text-template2').innerHTML;
                             var template = Handlebars.compile(source);
-                            console.log(obj);
                             var html = template(obj);
                             let li = document.getElementById('search_results') ;
                             li.innerHTML = html;
-                            createListeners2Buttons();
+                            createListeners2Buttons();  //creates event listeners to every save buttons
                         }, 3000);
-                    }catch(err){
-                        console.log("No results for this Search")
+
+                    }catch(err){ // no results
                         document.getElementById("search_results").innerHTML = "<h2>No Results</h2>"
                     }
                 })
+                .catch(err => {           //bad http code status
+                    console.log(err);
+                })
             }else{
-                console.log("Empty Fields");
+                console.log("Empty Fields");  //searching without input
             }
         }
         });
-
-        // var x=document.getElementsByClassName("save")
-        // console.log(x);
-        // //.addEventListener("click", function(){console.log("SAVE");});
 }
 
 async function getFetch(url){
@@ -88,7 +86,7 @@ async function getFetch(url){
     return response;
 }
 
-function findWorkIds(data){
+function findWorkIds(data){ //stores all workids from authors
     work_ids = [];
     for(var i = 0; i < data.author.length; i++) {
         if(data.author[i].works!==null){
@@ -105,12 +103,11 @@ function findWorkIds(data){
     return work_ids;
 }
 
-function createListeners2Buttons(){
+function createListeners2Buttons(){ //creates event listeners to every save buttons
     let elements = document.getElementsByClassName("save");
     for (var i = 0; i < elements.length; i++) {
         elements[i].addEventListener('click',function(){
             let x = document.getElementById(this.id+'_');
-            console.log(x.textContent)
             saveBook(this.id,x.textContent);
         });
     }
@@ -128,42 +125,36 @@ let responseJSON = {
       title_auth :titleAuth
     })
   };
-  console.log(responseJSON.body);
+  
   let response = await fetch('http://localhost:3000/api/FaveBooks',responseJSON);
   if(response.ok){
       let statusResponse = await response.json();
-      console.log(statusResponse);
       let div = document.getElementById(bookid+"d");
-      console.log(button);
-      console.log("SAVED id: " + bookid)
       div.innerHTML = `<button id=${bookid+"dbtn"} class="delete">Delete</button>`
       let btn = document.getElementById(bookid+"dbtn");
       createListeners2DelButtons();
   }else{
       console.log("Already saved");
-      let p = document.getElementById(bookid+"p") 
+      let p = document.getElementById(bookid+"p");
       p.innerHTML = "Already Saved";
       setTimeout(function(){p.innerHTML = "";},1500);  //Already Saved message appears for 1.5 sec in the screen and then disappears
   }
 }
 
 
-function createListeners2DelButtons(){
+function createListeners2DelButtons(){ //creates event listeners to every delete buttons
     let elements = document.getElementsByClassName("delete");
     for (var i = 0; i < elements.length; i++) {
         elements[i].addEventListener('click',function(){
-            //console.log("SAVED id: " + this.id)
-            let x = document.getElementById(this.id+'dbtn');
-            //console.log(x.textContent)
             deleteBook(this.id);
         });
     }
 }
 
-async function deleteBook(bookid){
+async function deleteBook(bookid){  //delete a book from saves 
 
     var pos = bookid.search("d"); // bookid : 12345dbtn
-     id = bookid.slice(0,pos);    // id : 12345
+    id = bookid.slice(0,pos);    // id : 12345
   
     let responseJSON = {
         method: 'DELETE',
@@ -174,18 +165,12 @@ async function deleteBook(bookid){
         body: JSON.stringify({
           id: parseInt(id)
         })
-      };
-      console.log(responseJSON.body);
-      console.log("ID: "+id);
-      let response = await fetch('http://localhost:3000/api/FaveBooks/'+ id,responseJSON);
-      if(response.ok){
-          let statusResponse = await response.json();
-          console.log(statusResponse);
-          console.log("DELETED id:"+id);
+    };
+ 
 
-          let div = document.getElementById(id+"d"); ;
-    
-          div.innerHTML = " "; // delete button delete after deletion
-
-      }
+    let response = await fetch('http://localhost:3000/api/FaveBooks/'+ id,responseJSON);
+    if(response.ok){
+        let div = document.getElementById(id+"d"); ;
+        div.innerHTML = " "; // delete button delete after deletion
     }
+}
