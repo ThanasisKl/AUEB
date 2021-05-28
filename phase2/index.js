@@ -11,6 +11,11 @@ app.use(express.urlencoded({extended:false}));
 var cors = require('cors');
 app.use(cors());
 
+//handlebars
+var exphbs = require('express-handlebars');
+app.engine('handlebars', exphbs());
+app.set('view engine', 'handlebars');
+
 //get all books
 app.get('/api/FaveBooks',(req,res)=>{
     res.json(books);

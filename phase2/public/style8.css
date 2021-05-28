@@ -152,7 +152,7 @@ button{
     display: inline-block;
 }
 
-.save:hover{
+.save:hover,.process:hover{
     color:gold;
 }
 

@@ -9,10 +9,13 @@
 
     <script id="text-template" type="text/x-handlebars-template"> 
         <ul id=search_list>
-            <h2 class="results">My Favourite Books</h2>
+            <h2 class="results" id="Fbooks">My Favourite Books</h2>
             {{#each fav_books}}
-                <li id={{id}}_>{{title_auth}} ({{id}})</li>
-                <button id={{id}} class="delete">Delete</button>
+                <div id={{id}}div>
+                    <li id={{id}}_>{{title_auth}} ({{id}})</li>
+                    <button id={{id}} class="delete">Delete</button>
+                    <button id={{id}}p class="process">Process</button>
+                </div>
             {{/each}}
         </ul>
     </script>
