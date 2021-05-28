@@ -16,6 +16,22 @@ var exphbs = require('express-handlebars');
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
 
+app.get('/Favbooks', (req,res)=>{
+    // res.json(books2.findAllBooks());
+    // console.log(books);
+    // var jbooks = '{"fav_books" : []}';
+    // const JSONobj = JSON.parse(jbooks);
+    // for(let i=0;i<books.length;i++){
+    //     //console.log(statusResponse[i]);
+    //     JSONobj["fav_books"].push(books[i]);
+    // }
+    // console.log(JSONobj);
+    // //let books2 = books;
+    res.render('body', {
+        books: books
+    })
+})
+
 //get all books
 app.get('/api/FaveBooks',(req,res)=>{
     res.json(books);

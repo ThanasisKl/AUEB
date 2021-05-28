@@ -1,10 +1,21 @@
-<ul id=search_list>
+<div class="container">
+    <header>
+        <h1>Search Books</h1>
+        <a href="index.html" id ="list">Search Book</a>
+    </header>
+    <main>
+        <ul id=search_list>
             <h2 class="results" id="Fbooks">My Favourite Books</h2>
-            {{#each fav_books}}
+            {{#each books}}
                 <div id={{id}}div>
                     <li id={{id}}_>{{title_auth}} ({{id}})</li>
                     <button id={{id}} class="delete">Delete</button>
                     <button id={{id}}p class="process">Process</button>
                 </div>
             {{/each}}
-</ul>
+        </ul>
+    </main>
+    <footer>
+        <p>Copyright &#169; 2021 Search Machine - All rights reserved</p>
+    </footer>
+</div>
