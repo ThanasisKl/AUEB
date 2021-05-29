@@ -9,14 +9,13 @@
 
     <script id="text-template" type="text/x-handlebars-template"> 
         <ul id=search_list>
-            <h2 class="results" id="Fbooks">My Favourite Books</h2>
             {{#each fav_books}}
                 <div id={{id}}div>
                     <li id={{id}}_>{{title_auth}} ({{id}})</li>
                     <button id={{id}} class="delete">Delete</button>
                     <!-- <button id={{id}}p class="process" href="booksList.html">Process</button> -->
                     <a href="bookProcess.html" id={{id}}a class="process">Process</a>
-                    <p id={{id}}r class={{id}}c></p>
+                    <p id={{id}}r>{{comments}}</p>
                 </div>
             {{/each}}
         </ul>
@@ -32,6 +31,12 @@
         <a href="index.html" id ="list">Search Book</a>
     </header>
     <main>
+        <h2 class="results" id="Fbooks">My Favourite Books</h2>
+        <label for="filter" id="search_lbl">Filter Saved Books</label>
+        <div>
+            <input type="text" id="filter"  placeholder="Search Here">
+        </div>
+        
         <section>      
             <div id="search_results"></div>
         </section>

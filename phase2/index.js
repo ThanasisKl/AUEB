@@ -53,6 +53,7 @@ app.post('/api/FaveBooks',(req,res)=>{
     const newBook = {
         title_auth: req.body.title_auth,
         id: req.body.id,
+        comments : ""
     };
     //check if every attribute is given
     if(!newBook.id || !newBook.title_auth){
@@ -98,7 +99,11 @@ app.put('/api/FaveBooks/:id', (req,res) =>{
         const updatedBook = req.body;
         for(let i=0; i< books.length;i++){
             if(books[i].id === parseInt(req.params.id)){
-                books[i].title_auth = updatedBook.title_auth;
+                if(updatedBook.title_auth != null){
+                    books[i].title_auth = updatedBook.title_auth;
+                }
+                books[i].comments = updatedBook.comments;
+                // console.log(updatedBook.comments);
                 break;
             }
         }

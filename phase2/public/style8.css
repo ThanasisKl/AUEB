@@ -197,8 +197,12 @@ textarea,#new,#lbl{
     border: 3px solid #3776ab;
 }
 
-@media only screen and (max-width:550px){
+@media only screen and (max-width:600px){
     input{
         width:80%;
     }
+}
+
+span{
+    color:#03335a;
 }
