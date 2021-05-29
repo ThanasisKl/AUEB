@@ -1,9 +1,14 @@
 window.onload = function(){
-    getAllBooks();
+    getAllBooks(false);   //finds all saved books
+    document.getElementById("filter").addEventListener('keyup',function(){ //filter saved books
+        setTimeout(function() {
+            getAllBooks(true);
+        }, 500);
+    });
 }
 
 
-async function getAllBooks(){ //
+async function getAllBooks(flag){ //
     let responseJSON = {
         method: 'GET',
         mode: 'cors', 
@@ -15,19 +20,20 @@ async function getAllBooks(){ //
     let response = await fetch('http://localhost:3000/api/FaveBooks',responseJSON);
     if(response.ok){
         let statusResponse = await response.json();
-        //console.log(statusResponse);
 
         var books = '{"fav_books" : []}';
         const JSONobj = JSON.parse(books);
         for(let i=0;i<statusResponse.length;i++){
-            //console.log(statusResponse[i]);
-            JSONobj["fav_books"].push(statusResponse[i]);
+            if (flag){ //prints the saved books that match filter
+                if(statusResponse[i].title_auth.includes(document.getElementById("filter").value)){
+                    JSONobj["fav_books"].push(statusResponse[i]);
+                } 
+            }else{  //prints all the saved books
+                JSONobj["fav_books"].push(statusResponse[i]);
+            }            
         }
-        console.log(JSONobj);
-
-        // const obj = JSON.parse(statusResponse);
         var source   = document.getElementById('text-template').innerHTML;
-        var template = Handlebars.compile(source);
+        var template = Handlebars.compile(source);       //handlebars
         var html = template(JSONobj);
         let li = document.getElementById('search_results') ;
         li.innerHTML = html;
@@ -36,7 +42,7 @@ async function getAllBooks(){ //
     }
 }
 
-function createListeners2DelButtons(){
+function createListeners2DelButtons(){  //creates event listenrs to all the buttons
     let elements = document.getElementsByClassName("delete");
     for (var i = 0; i < elements.length; i++) {
         elements[i].addEventListener('click',function(){
@@ -45,9 +51,8 @@ function createListeners2DelButtons(){
     }
 }
 
-async function deleteBook(bookid){
+async function deleteBook(bookid){ //deletes a book
 
-    console.log("ID "+bookid);
     let responseJSON = {
         method: 'DELETE',
         mode: 'cors', 
@@ -58,11 +63,10 @@ async function deleteBook(bookid){
           id: parseInt(bookid)
         })
     };
-    console.log(responseJSON.body);
+
     let response = await fetch('http://localhost:3000/api/FaveBooks/'+ bookid,responseJSON);
     if(response.ok){
         let statusResponse = await response.json();
-        console.log(statusResponse);
         console.log("DELETED id:"+bookid);
 
         let div = document.getElementById(bookid+"div");
@@ -70,11 +74,16 @@ async function deleteBook(bookid){
     }
 }
 
-function createListeners2ProcButtons(){
+function createListeners2ProcButtons(){ //creates event listeners to all the process button
     let elements = document.getElementsByClassName("process");
     for (var i = 0; i < elements.length; i++) {
         elements[i].addEventListener('click',function(){
-            console.log("Process");
+            
+            let linkid = this.id;
+            var pos = linkid.search("a");        // linkid : 12345a
+            let bookid = linkid.slice(0,pos);    // bookid : 12345
+            localStorage.setItem("book",document.getElementById(bookid+'_').textContent) //local storage is used to communicate with the other page
+            localStorage.setItem("id",bookid);
         });
     }
 }

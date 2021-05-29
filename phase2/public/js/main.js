@@ -18,8 +18,7 @@ window.onload = function(){
                         li.innerHTML = html;
                     }
                     createListeners2Buttons();            //creates event listeners to every save buttons
-                }catch(err){                               //No results for the search
-                    console.log("No results for this Search");   
+                }catch(err){                               //No results for the search   
                     document.getElementById("search_results").innerHTML = "<h2>No Results</h2>"
                 }
             })
@@ -39,6 +38,7 @@ window.onload = function(){
                         work_ids = findWorkIds(data);  //stores all workids from authors
                         var search = '{"results_list" : []}';
                         const obj = JSON.parse(search);
+                        // console.log("->>>"+work_ids.length);
                         for(var x = 0; x < work_ids.length; x++) {
                             url = "https://reststop.randomhouse.com/resources/works/"+work_ids[x];
                             getFetch(url)
@@ -59,11 +59,14 @@ window.onload = function(){
                             var html = template(obj);
                             let li = document.getElementById('search_results') ;
                             li.innerHTML = html;
+                            if(work_ids.length === 0){
+                                document.getElementById("search_results").innerHTML = "<h2>No Results</h2>"
+                            }
                             createListeners2Buttons();  //creates event listeners to every save buttons
                         }, 3000);
-
-                    }catch(err){ // no results
-                        document.getElementById("search_results").innerHTML = "<h2>No Results</h2>"
+                        
+                    }catch(err){ 
+                        console.log(error);
                     }
                 })
                 .catch(err => {           //bad http code status

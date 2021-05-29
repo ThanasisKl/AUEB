@@ -1,20 +1,20 @@
 window.onload = function(){
-    let book = localStorage.getItem("book");
-    let id = localStorage.getItem("id");
-    localStorage.clear();
+    let book = localStorage.getItem("book"); // get author and title from local storage
+    let id = localStorage.getItem("id");  //get book id from local storage
+    localStorage.clear();        //clear local storage
 
     let h2 = document.getElementById("book_id");
     h2.innerHTML = `<span>Processing:</span> ${book}`;
 
-    changeTitleAuthor(id);
+    changeTitleAuthor(id); 
 }
 
 function changeTitleAuthor(id){
     
-    document.getElementById("submit").addEventListener("click", async function(){
+    document.getElementById("submit").addEventListener("click", async function(){ //event listener to submit button
         let newTitleAuthor = document.getElementById("new").value;
         var responseJSON;
-        if (newTitleAuthor.trim() === ""){
+        if (newTitleAuthor.trim() === ""){ //if user dont put some change dont  change title and author to ""
             newTitleAuthor=null;
         }
         responseJSON = {
@@ -32,7 +32,7 @@ function changeTitleAuthor(id){
         
         console.log(responseJSON.body);
         console.log("ID: "+id);
-        let response = await fetch('http://localhost:3000/api/FaveBooks/'+ id,responseJSON);
+        let response = await fetch('http://localhost:3000/api/FaveBooks/'+ id,responseJSON); //update
         if(response.ok){
             let statusResponse = await response.json();
             console.log("UPDATED");

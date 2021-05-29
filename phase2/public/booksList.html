@@ -4,16 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Search Machine</title>
+    <title>Saved Books</title>
     <script src = "https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
 
-    <script id="text-template" type="text/x-handlebars-template"> 
+    <script id="text-template" type="text/x-handlebars-template"> <!--handlebars-->
         <ul id=search_list>
             {{#each fav_books}}
                 <div id={{id}}div>
                     <li id={{id}}_>{{title_auth}} ({{id}})</li>
                     <button id={{id}} class="delete">Delete</button>
-                    <!-- <button id={{id}}p class="process" href="booksList.html">Process</button> -->
                     <a href="bookProcess.html" id={{id}}a class="process">Process</a>
                     <p id={{id}}r>{{comments}}</p>
                 </div>
@@ -21,8 +20,8 @@
         </ul>
     </script>
 
-    <link rel="stylesheet" type="text/css" href="style8.css">
-    <script src = "booksManagment.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <script src = "../js/booksManagment.js"></script>
 </head>
 <body>
     <div class="container">

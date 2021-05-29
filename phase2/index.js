@@ -11,26 +11,6 @@ app.use(express.urlencoded({extended:false}));
 var cors = require('cors');
 app.use(cors());
 
-//handlebars
-var exphbs = require('express-handlebars');
-app.engine('handlebars', exphbs());
-app.set('view engine', 'handlebars');
-
-app.get('/Favbooks', (req,res)=>{
-    // res.json(books2.findAllBooks());
-    // console.log(books);
-    // var jbooks = '{"fav_books" : []}';
-    // const JSONobj = JSON.parse(jbooks);
-    // for(let i=0;i<books.length;i++){
-    //     //console.log(statusResponse[i]);
-    //     JSONobj["fav_books"].push(books[i]);
-    // }
-    // console.log(JSONobj);
-    // //let books2 = books;
-    res.render('body', {
-        books: books
-    })
-})
 
 //get all books
 app.get('/api/FaveBooks',(req,res)=>{
@@ -55,11 +35,6 @@ app.post('/api/FaveBooks',(req,res)=>{
         id: req.body.id,
         comments : ""
     };
-    //check if every attribute is given
-    if(!newBook.id || !newBook.title_auth){
-        return res.status(404).json({msg: "Please include book id, title_auth"});
-    }
-
     //check if book already exists in savedBooks
     const found = books.some(book => book.id === newBook.id);
 
@@ -103,7 +78,6 @@ app.put('/api/FaveBooks/:id', (req,res) =>{
                     books[i].title_auth = updatedBook.title_auth;
                 }
                 books[i].comments = updatedBook.comments;
-                // console.log(updatedBook.comments);
                 break;
             }
         }
@@ -122,6 +96,3 @@ app.put('/api/FaveBooks/:id', (req,res) =>{
 app.use(express.static(path.join(__dirname,'public')));
 
 app.listen(3000,() => console.log('listening at port 3000'));
-
-// // Members API Routes
-// app.use('/api/books', require('./routes/api/books'));
