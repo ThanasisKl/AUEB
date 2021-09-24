@@ -135,7 +135,8 @@ let responseJSON = {
       let div = document.getElementById(bookid+"d");
       div.innerHTML = `<button id=${bookid+"dbtn"} class="delete">Delete</button>`
       let btn = document.getElementById(bookid+"dbtn");
-      createListeners2DelButtons();
+      console.log("Book: "+bookid+" saved");
+      createListeners2DelButtons(bookid);
   }else{
       console.log("Already saved");
       let p = document.getElementById(bookid+"p");
@@ -145,13 +146,12 @@ let responseJSON = {
 }
 
 
-function createListeners2DelButtons(){ //creates event listeners to every delete buttons
-    let elements = document.getElementsByClassName("delete");
-    for (var i = 0; i < elements.length; i++) {
-        elements[i].addEventListener('click',function(){
-            deleteBook(this.id);
-        });
-    }
+function createListeners2DelButtons(bookid){ //creates event listeners to every delete buttons
+    let delButtonID = bookid+"dbtn";
+    let delButton = document.getElementById(delButtonID);
+    delButton.addEventListener('click',function(){
+            deleteBook(delButtonID);
+    });
 }
 
 async function deleteBook(bookid){  //delete a book from saves 
@@ -175,5 +175,6 @@ async function deleteBook(bookid){  //delete a book from saves
     if(response.ok){
         let div = document.getElementById(id+"d"); ;
         div.innerHTML = " "; // delete button delete after deletion
+        console.log("Book: "+id+" deleted");
     }
 }
