@@ -18,8 +18,10 @@ async function getAllBooks(flag){ //
     };
 
     let response = await fetch('http://localhost:3000/api/FaveBooks',responseJSON);
+    console.log("RESPONSE:   "+response);
     if(response.ok){
         let statusResponse = await response.json();
+        console.log("*******"+statusResponse+"*******");
 
         var books = '{"fav_books" : []}';
         const JSONobj = JSON.parse(books);
@@ -39,6 +41,8 @@ async function getAllBooks(flag){ //
         li.innerHTML = html;
         createListeners2DelButtons();
         createListeners2ProcButtons();
+    }else{
+        console.log("NOT OKAY");
     }
 }
 
