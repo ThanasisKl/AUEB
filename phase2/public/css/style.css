@@ -49,7 +49,8 @@ main{
 }
 
 #button{
-    background-color:#ffff00;
+    /* background-color:#ffff00; */
+    background-color:black;
     font-size: 1.3em;
     float:right;
     margin-bottom: 8px;
@@ -89,8 +90,9 @@ h2{
 }
 
 p:not(footer p){
-    color:#3776ab;
+    color:red;
     margin-top: -10px;
+    font-style: oblique;
 }
 
 input{
@@ -150,7 +152,7 @@ button{
 }
 
 .save:hover,.process:hover{
-    color:gold;
+    color:black;
 }
 
 .delete:hover{
@@ -206,3 +208,19 @@ textarea,#new,#lbl{
 span{
     color:#03335a;
 }
+
+ul {
+    list-style-type: none;
+    margin-left: 0;
+    padding-right: 0;
+}
+
+li.arrow::before {
+    content: ">  ";
+    left: 0;
+    top: 6px;
+    height: 5px;
+    width: 5px;
+    margin-right: 10px;
+    color:red;
+  }

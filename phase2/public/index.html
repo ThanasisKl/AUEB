@@ -11,7 +11,7 @@
         <ul id=search_list>
             <h2 class="results">Search Results</h2>
             {{#each work}}
-            <li id={{workid}}_>{{titleAuth}}</li>
+            <li id={{workid}}_ class="arrow">{{titleAuth}}</li>
             <button id={{workid}} class="save">save</button>
             <div class="del" id={{workid}}d>
             </div>
@@ -24,7 +24,7 @@
         <ul id=search_list>
             <h2 class="results">Search Results</h2>
             {{#each results_list}}
-            <li id={{id}}_>{{search}}</li>
+            <li id={{id}}_ class="arrow">{{search}}</li>
             <button id={{id}} class="save">save</button>
             <div class="del" id={{id}}d>
             </div>

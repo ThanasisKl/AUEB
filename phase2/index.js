@@ -4,8 +4,7 @@ const { Router } = require('express');
 const express = require('express');
 const path = require('path');
 const app = express();
-var books = require('./favourite_books');
-const Book = require('./models/book');//**// 
+const Book = require('./models/book');
 const mongoose = require('mongoose');
 
 //body parser
@@ -15,55 +14,31 @@ app.use(express.urlencoded({extended:false}));
 var cors = require('cors');
 app.use(cors());
 
+//connect to database
 mongoose.connect('mongodb://127.0.0.1:27017/booksDB', { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => {
-        console.log("MONGO CONNECTION OPEN!!!")
+        console.log("MONGO CONNECTION OPEN")
     })
     .catch(err => {
-        console.log("MONGO CONNECTION ERROR!!!!")
+        console.log("***MONGO CONNECTION ERROR***")
         console.log(err)
     })
 
 
 //get all books
-//TODO: get all books from the database
 app.get('/api/FaveBooks', (req,res)=>{
-    // res.json(books);
     Book.find({})
     .then(saved_books => {
-        if(saved_books.isEmpty){
-            res.status(404).json({msg : "No books found"});
-        }else{
-            res.status(200).json(saved_books)
-        }
+        res.status(200).json(saved_books)
     })
     .catch( () =>{
-        res.status(404);
+        res.status(404).json({
+            msg:"Error from database (find all books)"
+        });
     })
-});
-
-//get a book
-//TODO: get a book from the database
-app.get('/api/FaveBooks/:id',(req,res)=>{
-    Book.findById(req.params.id)
-    .then(book => {
-        console.log("jjjjjjjjjj"+book);
-        res.status(200).json(book);
-    })
-    .catch(()=>{
-        res.status(400).json({message: `No Books with id of ${req.params.id}`});
-    })
-
-    // let book_found = books.some(book => book.id === parseInt(req.params.id));
-    // if(book_found){
-    //     res.json(books.filter(book => book.id === parseInt(req.params.id)));
-    // }else{
-    //     res.status(400).json({message: `No Books with id of ${req.params.id}`});
-    // }
 });
 
 //add a book
-//TODO: add a book to the database
 app.post('/api/FaveBooks',(req,res)=>{
     console.log("Post request add book")
     const newBook = {
@@ -71,18 +46,6 @@ app.post('/api/FaveBooks',(req,res)=>{
         id: req.body.id,
         comments : ""
     };
-    //check if book already exists in savedBooks
-    // const found = books.some(book => book.id === newBook.id);
-
-    // if(found){
-    //     return res.status(400).json({msg: "Book already saved"});
-    // }
-
-    // books.push(newBook);
-    // res.json({
-    //     msg: "Book added",
-    //     books: books
-    // });
     Book.find({id: { $eq: newBook.id }})
     .then(book => {
         if (book==""){
@@ -96,26 +59,15 @@ app.post('/api/FaveBooks',(req,res)=>{
             });
         }
     })
-    .catch((err)=>{
-       console.log("Error !!");
+    .catch(()=>{
+        res.status(404).json({
+            msg:"Error from database (add a book)"
+        });
     })
 });
 
 //delete a book
-//TODO: delete a book from the database
-app.delete('/api/FaveBooks/:id', (req,res) =>{
-    // console.log(`Delete request for book with id ${req.params.id}`)
-    // const found = books.some(book => book.id === parseInt(req.params.id));
-
-    // if(found){
-    //     books = books.filter(book => book.id !== parseInt(req.params.id));
-    //     res.json({ 
-    //         msg:"Book deleted", 
-    //         books: books
-    //     });
-    // }else{
-    //     res.json({msg: 'Book not found to delete'});
-    // }  
+app.delete('/api/FaveBooks/:id', (req,res) =>{ 
     Book.find({id: { $eq: req.params.id }})
     .then(book => {
         if (book==""){
@@ -131,42 +83,23 @@ app.delete('/api/FaveBooks/:id', (req,res) =>{
                     msg: "Book deleted",
                 });
             })
-            .catch(err=>{
-                console.log(err);
+            .catch(()=>{
+                res.status(404).json({
+                    msg:"Error from database (delete a book [1])"
+                });
             })
         }
     })
-    .catch((err)=>{
-       console.log("Error !!");
+    .catch(()=>{
+        res.status(404).json({
+            msg:"Error from database (delete a book [2])"
+        });
     })
 })
 
 
 //update a book
-//TODO: update a book from the database
 app.put('/api/FaveBooks/:id', (req,res) =>{
-    // const found = books.some(book => book.id === parseInt(req.params.id));
-
-    // if(found){
-    //     const updatedBook = req.body;
-    //     for(let i=0; i< books.length;i++){
-    //         if(books[i].id === parseInt(req.params.id)){
-    //             if(updatedBook.title_auth != null){
-    //                 books[i].title_auth = updatedBook.title_auth;
-    //             }
-    //             books[i].comments = updatedBook.comments;
-    //             break;
-    //         }
-    //     }
-
-    //     res.json({
-    //         msg: "Books list updated", 
-    //         books: books
-    //     });
-
-    // }else{
-    //     res.status(404).json( {msg: 'Book not exists'});
-    // }
     Book.find({id: { $eq: req.params.id }})
     .then(book => {
         if (book==""){
@@ -185,16 +118,20 @@ app.put('/api/FaveBooks/:id', (req,res) =>{
             Book.updateOne({id: { $eq: req.params.id }},{title_auth:title_author,comments:comment})
             .then(()=>{
                 res.status(200).json({
-                    msg: "Book deleted",
+                    msg: "Book updated",
                 });
             })
-            .catch(err=>{
-                console.log(err);
+            .catch(()=>{
+                res.status(404).json({
+                    msg:"Error from database (update a book [1])"
+                });
             })
         }
     })
-    .catch((err)=>{
-       console.log("Error !!");
+    .catch(()=>{
+        res.status(404).json({
+            msg:"Error from database (update a book [2])"
+        });
     })  
 })
 
