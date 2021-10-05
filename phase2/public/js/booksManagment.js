@@ -4,7 +4,7 @@ window.onload = function(){
         setTimeout(function() {
             getAllBooks(true);
         }, 500);
-    });
+    });    
 }
 
 
@@ -86,3 +86,5 @@ function createListeners2ProcButtons(){ //creates event listeners to all the pro
         });
     }
 }
+
+

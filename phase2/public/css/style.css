@@ -23,6 +23,7 @@ h2,label,input{
 
 label{
     color: #05365e;
+    font-size: 1.4em;
 }
 
 footer{
@@ -224,3 +225,16 @@ li.arrow::before {
     margin-right: 10px;
     color:red;
   }
+
+.info{
+    float: right;
+    font-weight:600;
+    margin-right: 2em;
+    margin-top: 10px;
+    text-decoration:none;
+    color:#03335a
+}
+
+.info:hover{
+    font-size:105%;
+}
