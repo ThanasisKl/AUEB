@@ -1,0 +1,114 @@
+button{
+    background-color: rgb(153, 153, 153);
+    color: white;
+    text-align: center;
+    width:25%;
+    height: 60px;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    font-size: 25px;
+}
+
+button:hover{
+    background-color: rgb(74, 74, 74);
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+body{
+    background-color: #D0CEE2;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+img{
+    width:17em
+}
+
+header{
+    margin-left: auto;
+    margin-right: 30px;
+    margin-top: 20px;
+}
+
+i{
+    font-size: 3.5em;
+    color:rgb(74, 74, 74)
+}
+
+#popup{
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    width: 50%;
+    height: 60%;
+    background-color: #9b9aa2;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 7px 7px 7px 7px rgba(0, 0, 0, 0.5); 
+}
+
+#info-text{
+    text-align: start;
+    margin-top: auto;
+    margin-bottom:10% ;
+    font-size: 1.6em;
+}
+
+#popup h2,#popup2 h2{
+    font-size: 2em;
+}
+
+#x-icon{
+    margin-left: auto;
+    margin-right: 18px;
+    margin-top: 18px;
+    font-size: 1.5em;
+    color:black;
+}
+
+li{
+    margin-bottom: 10px;
+}
+
+.btn_icons{
+    font-size: 1.2em;
+    color: white;
+}
+
+#popup2{
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    width: 50%;
+    height: 50%;
+    background-color: #9b9aa2;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 7px 7px 7px 7px rgba(0, 0, 0, 0.5); 
+}
+
+#x-icon2{
+    margin-left: auto;
+    margin-right: 18px;
+    margin-top: 18px;
+    font-size: 1.5em;
+    color:black;
+}
+
+#popup2 input{
+    width:35%;
+    height: 37px;
+    border-radius: 5px;
+    font-size: 1.5em;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}

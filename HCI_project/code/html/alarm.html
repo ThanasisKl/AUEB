@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <title>Alarm panel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/a0eb590982.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./../css/alarm.css">
+    <script src="./../js/alarm.js"></script>
+</head>
+<body>
+    <main>
+        <div class="upper_section">
+            <div id="back">
+                <i class="fa-solid fa-circle-arrow-left" id="back-icon"></i>
+            </div>
+            <div id="info">
+                <i class="fa-solid fa-circle-info" id="info-icon"></i>
+            </div>
+            <img src="./../assets/logo.png" alt="logo">
+        </div>
+
+        <div id="alarm_panel">
+
+            <div id="left_panel" class="side_panel">
+                <button class="side_button" id="fire_alarm_button">
+                    <img class="side_icon" src="./../assets/fire_alarm_icon.png"/>
+                </button>
+                <button class="side_button" id="police_alarm_button">
+                    <img class="side_icon" src="./../assets/police_alarm_icon.png" />
+                </button>
+            </div>
+
+
+            <div id="panel" >
+                <div id="alarms" class="row">
+                    <!-- <img class="row_icon" src="./../assets/danger_icon.png"/> -->
+                    <div id="danger-div">
+                        
+                    </div>
+                    <!-- <img class="row_icon" src="./../assets/lock_icon.png"/> -->
+                    <div id="lock-div">
+                        <i class="fa-solid fa-lock-open row_icon red" id="lock"></i>
+                    </div>
+                    <!-- <img class="row_icon" src="./../assets/checked_house_icon.png"/> -->
+                    <div id="house-div">
+                        
+                    </div>
+                    
+                </div>
+                <div id="password_panel">
+                </div>
+                <div id="numeric_pad">
+                    <div class="row">
+                        <button class="number" value="1">1</button>
+                        <button class="number" value="2">2</button>
+                        <button class="number" value="3">3</button>
+                    </div>
+                    <div class="row">
+                        <button class="number" value="4">4</button>
+                        <button class="number" value="5">5</button>
+                        <button class="number" value="6">6</button>
+                    </div>
+                    <div class="row">
+                        <button class="number" value="7">7</button>
+                        <button class="number" value="8">8</button>
+                        <button class="number" value="9">9</button>
+                    </div>
+                    <div class="row">
+                        <img class="row_icon" id="remove_button" src="./../assets/remove_icon.png"/>
+                        <button class="number" value="0">0</button>
+                        <img class="row_icon" id="secure_button" src="./../assets/check-icon.png"/>
+                    </div>
+                </div>
+            </div>
+            <div id="right_panel" class="side_panel">
+                <button class="side_button" id="arm_empty_house_button">
+                    <img class="side_icon" src="./../assets/empty_house_icon.png"/>
+                </button>
+                <button class="side_button" id="arm_full_house_button">
+                    <img class="side_icon" src="./../assets/full_house_icon.png" />
+                </button>
+            </div>
+        </div>
+
+        <div id="popup">
+            <i class="fa-solid fa-x" id="x-icon"></i>
+            <div id="title-div">
+                <h2>Πληροφορίες</h2>
+            </div>
+            <h2 class="section_title">Εικονίδια:</h2>
+            <ul id="info-text">
+                <li><i class="fa-solid fa-lock-open red"></i> : ο συναγερμός <b>δεν</b> είναι ενεργοποιημένος</li>
+                <li><i class="fa-solid fa-lock green"></i> : ο συναγερμός είναι ενεργοποιημένος</li>
+                <li><i class="fa-solid fa-house-circle-xmark red"></i> : <b>δεν</b> είναι όλες οι ζώνες του χώρου ασφαλισμένες</li>
+                <li><i class="fa-solid fa-house-circle-check green"></i> : όλες οι ζώνες του χώρου είναι ασφαλισμένες</li>
+                <li><i class="fa-solid fa-plug-circle-exclamation red"></i> : ο χώρος <b>δεν</b> διαθέτει ηλεκτρικό ρεύμα</li>
+                <li><i class="fa-solid fa-plug-circle-check green"></i> : ο χώρος διαθέτει ηλεκτρικό ρεύμα</li>
+            </ul>
+            <h2 class="section_title">Κουμπιά:</h2>
+            <ul id="info-text">
+                <li><img src="./../assets/police_alarm_icon.png" alt="police button"/> : σε περίπτωση ανάγκης ενημερώνει την αστυνομία</li>
+                <li><img src="./../assets/fire_alarm_icon.png" alt="fire button"/> : σε περίπτωση φωτιάς ενημερώνει την πυροσβεστική</li>
+                <li><img src="./../assets/empty_house_icon.PNG" alt="alarm activation without people in the room"/> : ενεργοποίηση συναγερμού <b>χωρίς</b> να υπάρχουν άτομα μέσα στο χώρο</li>
+                <li><img src="./../assets/full_house_icon.PNG" alt="alarm activation with people in the room"/> : ενεργοποίηση συναγερμού με άτομα μέσα στο χώρο</li>
+                <li>Για την απενεργοποίηση του συναγερμού πληκτρολογήστε τον κωδικό και στην συνεχεια πατήστε το κουμπί: <img src="./../assets/check-icon.png" alt="check icon" id="check"/></li>
+            </ul>
+        </div>
+
+        <div id="popup2">
+            <i class="fa-solid fa-x" id="x-icon2"></i>
+            <div id="title-div">
+                <h2>Προσοχή!</h2>
+            </div>
+            <p id="info-text2"></p>
+        </div>
+    </main>
+</body>
+</html>

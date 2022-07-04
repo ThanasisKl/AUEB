@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <title>Main</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/a0eb590982.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./../css/index.css">
+    <script src="./../js/index.js"></script>
+</head>
+<body>
+    <main>
+        <header>
+            <i class="fa-solid fa-circle-info" id="info-icon"></i>
+        </header>
+        <img src="./../assets/logo.png" alt="logo">
+        <button id="alarm"><i class="fa-solid fa-bell btn_icons"></i> Συναγερμός</button>
+        <button id="zones"><i class="fa-solid fa-layer-group btn_icons"></i> Ζώνες</button>
+        <button id="settings"><i class="fa-solid fa-gear btn_icons"></i> Ρυθμίσεις</button>
+        <div id="popup">
+            <i class="fa-solid fa-x" id="x-icon"></i>
+            <div id="title-div">
+                <h2>Πληροφορίες</h2>
+            </div>
+            
+            <ul id="info-text">
+                <li>Για να μεταβείτε στο κύριο μέρος του συναγερμού πατήστε το κουμπί 'Συναγερμός'</li>
+                <li>Για να δείτε τις ζώνες του συναγερμού πατήστε το κουμπί 'Ζώνες'</li>
+                <li>Για να μεταβείτε στις ρυθμίσεις του συναγερμού πατήστε το κουμπί 'Ρυθμίσεις'. Διαθέσιμες ρυθμίσεις: Αλλαγή κωδικού συναγερμού, Αλλαγή Ονόματος Ζώνης, Αλλαγή χρονοκαθυστέρησης εξοπλισμού</li>
+            </ul>
+            
+        </div>
+
+        <div id="popup2">
+            <i class="fa-solid fa-x" id="x-icon2"></i>
+            <div id="title-div">
+                <h2>Δώστε τον κωδικό πρόσβασης προκειμένου να μεταβείτε στις ρυθμίσεις</h2>
+            </div>
+           <input type="password" id="password4settings"/>
+        </div>
+    </main>
+</body>
+</html>

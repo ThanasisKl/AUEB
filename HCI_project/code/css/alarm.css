@@ -1,0 +1,240 @@
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+body{
+    background-color: #D0CEE2;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+button{
+    background-color: rgb(153, 153, 153);
+    color: white;
+    text-align: center;
+    width:60px;
+    height: 50px;
+    text-decoration: none;
+    /* display: block; */
+    margin:20px;
+    border-radius: 6px;
+    font-size: 18px;
+    margin-top: 5%;
+}
+
+#password_panel{
+    margin-top:10px;
+    margin-bottom:20px;
+    border: 2px solid black;
+    width: 280px;
+    height:50px;
+    background-color: white;
+    text-align: center;
+    font-size: 5em;
+
+}
+
+.row{
+    display:flex;
+
+}
+
+#panel{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.row_icon{
+    width:60px;
+    height:50px;
+    margin:20px;
+    margin-top: 5%;
+    /* border: 1px solid black; */
+}
+
+
+button:hover{
+    background-color: rgb(74, 74, 74);
+}
+
+.upper_section{
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+}
+
+#back{
+    left: 0;
+    margin-left: 25px;
+    position: absolute;
+}
+
+#info{
+    right: 0;
+    margin-right: 25px;
+    position: absolute;
+}
+
+i{
+    font-size: 3.5em;
+    color:rgb(74, 74, 74)
+}
+
+#popup{
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    width: 86%;
+    height: 97%;
+    background-color: #9b9aa2;
+    border-radius: 10px;
+    text-align: start;
+    box-shadow: 7px 7px 7px 7px rgba(0, 0, 0, 0.5); 
+}
+
+#info-text{
+    margin-top: auto;
+    margin-bottom:3% ;
+    font-size: 1.3em;
+}
+
+#x-icon{
+    margin-left: auto;
+    margin-right: 18px;
+    margin-top: 18px;
+    font-size: 1.5em;
+    color:black;
+}
+
+input{
+    width: 30%;
+    height: 35px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border-style: none;
+    display: block;
+}
+
+img{
+    width:16em
+}
+
+#inputs{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#popup2{
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    width: 50%;
+    height: 30%;
+    background-color: rgb(252, 44, 44);
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 7px 7px 7px 7px rgba(0, 0, 0, 0.5); 
+}
+
+#info-text2{
+    margin-top: auto;
+    margin-bottom:10% ;
+    font-size: 1.3em;
+}
+
+#x-icon2{
+    margin-left: auto;
+    margin-right: 18px;
+    margin-top: 18px;
+    font-size: 1.5em;
+    color:black;
+}
+
+#popup3{
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    width: 40%;
+    height: 20%;
+    background-color: rgb(3, 198, 3);
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 7px 7px 7px 7px rgba(0, 0, 0, 0.5); 
+}
+
+#x-icon3{
+    margin-left: auto;
+    margin-right: 18px;
+    margin-top: 18px;
+    font-size: 1.5em;
+    color:black;
+}
+
+.red{
+    color: red;
+}
+
+.green{
+    color: green;
+}
+
+.side_icon{
+    width: 63px;
+    height: 63px;
+    margin: 0;
+    padding-top:5px ;
+    align-self: center;
+}
+
+#alarm_panel{
+    display:grid;
+    grid-template-columns: 15% 60% 15%;
+    grid-template-rows: 100%;
+    justify-content: center;
+}
+
+.side_panel{
+    margin-top:100px;
+    align-self: center;
+
+}
+
+.side_button{
+    width: 100px;
+    height: 80px;
+    align-items: center;
+}
+
+#title-div h2{
+    text-align: center;
+    font-size: 2em;
+}
+
+li i{
+    font-size: 1.2em;
+    margin-top: 5px;
+}
+
+li img{
+    width: 40px;
+    height :40px;
+    border: black solid 2px;
+    border-radius: 7px;
+    margin-top: 5px;
+}
+
+.section_title{
+    margin-left: 15px;
+    font-size: 1.3em;
+}
+
+#check{
+    width: 30px;
+    height :30px;
+}

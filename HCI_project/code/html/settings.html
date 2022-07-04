@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <title>Settings</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/a0eb590982.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./../css/settings.css">
+    <script src="./../js/settings.js"></script>
+</head>
+<body id="body">
+    <main>
+        <div class="upper_section">
+            <div id="back">
+                <i class="fa-solid fa-circle-arrow-left" id="back-icon"></i>
+            </div>
+            <div id="info">
+                <i class="fa-solid fa-circle-info" id="info-icon"></i>
+            </div>
+        </div>
+        <img src="./../assets/logo.png" alt="logo">
+        <button id="activation_time">Χρονοκαθυστέρηση Εξοπλισμού</button>
+        <button id="change_password">Αλλαγή Κωδικού</button>
+        <button id="change_zone_name">Αλλαγή Ονόματος Ζώνης</button>
+       
+        <div id="popup">
+            <i class="fa-solid fa-x" id="x-icon"></i>
+            <div id="title-div">
+                <h2>Πληροφορίες</h2>
+            </div>
+            
+            <ul id="info-text">
+                <li>Για να αλλάξετε τον χρόνο που απατείται για την ενεργοποιήση του συναγερμού αφού πατήσετε το κατάλληλο κουμπί πατήστε το κουμπί 'Χρονοκαθυστέρηση Εξοπλισμού'</li>
+                <li>Για να αλλάξετε τον κωδικό του συναγερμού πατήστε το κουμπί 'Αλλαγή Κωδικού'</li>
+                <li>Για να αλλάξετε το όνομα μιας ζώνης πατήστε 'Αλλαγή Ονόματος Ζώνης'</li>
+            </ul>
+            
+        </div>
+
+        <div id="popup2">
+            <i class="fa-solid fa-x" id="x-icon2"></i>
+            <div id="title-div">
+                <h2>Καθυστέρηση Ενεργοποιήσης Συναγερμού</h2>
+            </div>
+            
+            <span id="info-text2">
+                <label for="time">Διαλέξτε Χρόνο: </label>
+                <select id="time" name="time">
+                    <option id="sec20" value="20">20 δευτερόλεπτα</option>
+                    <option id="sec40" value="40">40 δευτερόλεπτα</option>
+                    <option id="sec60" value="60">60 δευτερόλεπτα</option>
+                </select>
+            </span>
+            <button id="save_time">Αποθήκευση Χρόνου</button>
+        </div>
+
+        <div id="popup3">
+            <i class="fa-solid fa-x" id="x-icon3"></i>
+            <div id="title-div">
+                <h2 id="successful_action"></h2>
+            </div>
+        </div>
+
+        <div id="popup4">
+            <i class="fa-solid fa-x" id="x-icon4"></i>
+            <div id="title-div">
+                <h2>Αλλαγή Ονόματος Ζώνης</h2>
+            </div>
+            
+            <span id="info-text4">
+                <label for="zones">Διαλέξτε Ζώνη: </label>
+                <select id="zones" name="zones">
+                
+                </select>
+            </span>
+            <input type="text" id="new_zone_name"/>
+            <button id="save_zone_name">Αποθήκευση Ονόματος</button>
+        </div>
+
+        <div id="popup5">
+            <i class="fa-solid fa-x" id="x-icon5"></i>
+            <div id="title-div">
+                <h2>Μην Δίνεται κενό όνομα ζώνης</h2>
+            </div>
+        </div>
+    </main>
+    <script>
+        console.log(localStorage.getItem("alarm_time"));
+        if(localStorage.getItem("alarm_time") === '20'){
+            document.getElementById("sec20").style.backgroundColor =  '#525254';
+            document.getElementById("sec20").style.color =  'white';
+        }else  if(localStorage.getItem("alarm_time") === '40'){
+            document.getElementById("sec40").style.backgroundColor =  '#525254';
+            document.getElementById("sec40").style.color =  'white';
+        }else{
+            document.getElementById("sec60").style.backgroundColor =  '#525254';
+            document.getElementById("sec60").style.color =  'white';
+        }
+    </script>
+</body>
+</html>
