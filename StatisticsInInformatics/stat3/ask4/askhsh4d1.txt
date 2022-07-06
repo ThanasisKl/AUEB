@@ -1,0 +1,11 @@
+color	year	amount
+brown	2009	0.198
+red	2009	0.178
+yellow	2009	0.176
+blue	2009	0.196
+green	2009	0.252
+brown	2020	0.275
+red	2020	0.2475
+yellow	2020	0.2
+blue	2020	0.1875
+green	2020	0.1
