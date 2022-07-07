@@ -5,6 +5,8 @@ DataStructures contains some data structures (stack, queue, binary tree, list, p
 ## HCI_Project
 HCI_Project contains a user-friendly user interface for a security system. This project was made in the context of the computer interaction course, it contains 5 screens and the following programming languages were used: HTML, CSS, Javascript. The final form of the project was formed by the evaluation of different prototypes of the system by user. The main page of the application is shown below.This project was done in the context of the course Human-Computer Interaction.
 ![HCI_Project main page](README_assets/alarm.png)
+## OperatingSystems 
+This project was done in the context of the course Operating Systems. In this project we made a pizza restaurant emulator using POSIX treads (pthreads).
 ## SecureLogin
 SecureLogin is a safe login page which prevents an attacker from doing brute force attacks and sql injections. Users are stored in a local MySQL database. This project was done in the context of the course Νetwork Security using the spring boot a java framework.
 ## SQL_Server_Basics
